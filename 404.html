@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>bio.</title>
+<meta name="robots" content="noindex">
+<script>
+/* Back-compat: old SPA links were getbiodental.co.uk/#/retainers etc.
+   Map any legacy hash route to its new clean URL. Otherwise send to home. */
+(function(){
+  var map = {
+    '/':'/', '/home':'/', '/shop':'/shop/', '/order':'/order/',
+    '/retainers':'/retainers/', '/standard':'/standard/', '/about':'/about/',
+    '/faq':'/faq/', '/journal':'/journal/', '/privacy':'/privacy/', '/terms':'/terms/'
+  };
+  var h = (location.hash||'').replace(/^#/,'');
+  var path = h.split('#')[0];
+  var anchor = h.indexOf('#')>0 ? '#'+h.split('#')[1] : '';
+  var dest;
+  if (map[path]) dest = map[path];
+  else if (path.indexOf('/journal/')===0) dest = path.replace(/\/+$/,'')+'/';
+  else dest = '/';
+  location.replace(dest + anchor);
+})();
+</script>
+</head>
+<body><p style="font-family:sans-serif;padding:40px">Redirecting… <a href="/">Go to bio. home</a>.</p></body>
+</html>
