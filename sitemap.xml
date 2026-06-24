@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://getbiodental.co.uk/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://getbiodental.co.uk/retainers/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://getbiodental.co.uk/shop/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://getbiodental.co.uk/order/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://getbiodental.co.uk/standard/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://getbiodental.co.uk/about/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://getbiodental.co.uk/faq/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://getbiodental.co.uk/journal/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://getbiodental.co.uk/journal/what-are-retainers-made-of/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://getbiodental.co.uk/journal/microplastics-clear-aligners/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://getbiodental.co.uk/journal/invisalign-alternatives-uk/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://getbiodental.co.uk/journal/how-often-replace-retainer/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://getbiodental.co.uk/privacy/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://getbiodental.co.uk/terms/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://getbiodental.co.uk/</loc><lastmod>2026-06-24</lastmod><priority>1.0</priority></url>
+  <url><loc>https://getbiodental.co.uk/retainers/</loc><lastmod>2026-06-24</lastmod><priority>0.9</priority></url>
+  <url><loc>https://getbiodental.co.uk/order/</loc><lastmod>2026-06-24</lastmod><priority>0.9</priority></url>
+  <url><loc>https://getbiodental.co.uk/standard/</loc><lastmod>2026-06-24</lastmod><priority>0.8</priority></url>
+  <url><loc>https://getbiodental.co.uk/shop/</loc><lastmod>2026-06-24</lastmod><priority>0.7</priority></url>
+  <url><loc>https://getbiodental.co.uk/about/</loc><lastmod>2026-06-24</lastmod><priority>0.6</priority></url>
+  <url><loc>https://getbiodental.co.uk/faq/</loc><lastmod>2026-06-24</lastmod><priority>0.6</priority></url>
+  <url><loc>https://getbiodental.co.uk/journal/</loc><lastmod>2026-06-24</lastmod><priority>0.5</priority></url>
+  <url><loc>https://getbiodental.co.uk/journal/what-are-retainers-made-of/</loc><lastmod>2026-06-24</lastmod><priority>0.5</priority></url>
+  <url><loc>https://getbiodental.co.uk/journal/microplastics-clear-aligners/</loc><lastmod>2026-06-24</lastmod><priority>0.5</priority></url>
+  <url><loc>https://getbiodental.co.uk/journal/invisalign-alternatives-uk/</loc><lastmod>2026-06-24</lastmod><priority>0.5</priority></url>
+  <url><loc>https://getbiodental.co.uk/journal/how-often-replace-retainer/</loc><lastmod>2026-06-24</lastmod><priority>0.5</priority></url>
+  <url><loc>https://getbiodental.co.uk/privacy/</loc><lastmod>2026-06-24</lastmod><priority>0.3</priority></url>
+  <url><loc>https://getbiodental.co.uk/terms/</loc><lastmod>2026-06-24</lastmod><priority>0.3</priority></url>
 </urlset>
