@@ -148,7 +148,7 @@ html{scroll-behavior:smooth;background:#EFEAE0}
   .pcard.feat .ptag,.pcard.feat .per,.pcard.feat li,.ctaband p{color:#E4DDD0 !important}
   .ctaband .eyebrow{color:#8E9582 !important}
   .btn{background:#8B3A2E !important;color:#EFEAE0 !important}
-  .btn.ghost{background:transparent !important;color:#1A1915 !important}
+  .btn.ghost{background:transparent !important;color:#EFEAE0 !important;border:1px solid rgba(239,234,224,.5) !important}
 }
 body{
   background:var(--bone);
@@ -207,6 +207,9 @@ nav{display:flex;align-items:center;justify-content:space-between;height:72px;ma
 .btn:hover{background:var(--oxide-deep);transform:translateY(-1px)}
 .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
 .btn.ghost:hover{background:var(--ink);color:var(--bone)}
+/* ghost buttons inside dark sections: always light text + light border */
+.ctaband .btn.ghost,.pcard.feat .btn.ghost{color:var(--bone);border:1px solid rgba(239,234,224,.5)}
+.ctaband .btn.ghost:hover,.pcard.feat .btn.ghost:hover{background:var(--bone);color:var(--ink);border-color:var(--bone)}
 .btn.lg{padding:15px 30px;font-size:16px}
 .navtoggle{display:none;background:none;border:0;cursor:pointer;font-family:var(--mono);font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink)}
 
@@ -414,8 +417,8 @@ footer{border-top:1px solid var(--line);padding:64px 0 48px}
 
 /* ---------- responsive ---------- */
 @media(max-width:900px){
-  .navlinks{position:fixed;inset:72px 0 auto;z-index:120;background:var(--bone);flex-direction:column;align-items:flex-start;gap:0;padding:8px 28px 24px;border-bottom:1px solid var(--line);box-shadow:0 18px 40px -20px rgba(26,25,21,.45);transform:translateY(-120%);transition:transform .3s;height:auto}
-  .navlinks.open{transform:none}
+  .navlinks{position:fixed;inset:72px 0 auto;z-index:120;background:#EFEAE0;flex-direction:column;align-items:flex-start;gap:0;padding:8px 28px 24px;border-bottom:1px solid var(--line);box-shadow:0 18px 40px -20px rgba(26,25,21,.45);transform:translateY(-120%);transition:transform .3s,visibility .3s;height:auto;visibility:hidden;pointer-events:none}
+  .navlinks.open{transform:none;visibility:visible;pointer-events:auto}
   .navlinks a{padding:14px 0;width:100%;border-bottom:1px solid var(--line-soft);font-size:16px}
   .navlinks .btn{margin-top:14px;width:100%;text-align:center}
   .navtoggle{display:block}
