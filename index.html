@@ -640,11 +640,11 @@ h1,h2{letter-spacing:-.018em}
         </div>
         <div class="act"><a href="/retainers/" class="btn">View bio.retainers →</a></div>
       </div>
-      <div class="prod soon">
+      <a class="prod soon" href="/aligners/" style="text-decoration:none;color:inherit">
         <div class="idx">/ 02 — In development</div>
         <div class="body"><span class="tag">In development</span><h3 class="lower">bio.aligners</h3><p>Clear aligners shed the most plastic of any device. Ours won't.</p></div>
-        <div class="act">Coming soon</div>
-      </div>
+        <div class="act">Join the priority list &rarr;</div>
+      </a>
       <div class="prod soon">
         <div class="idx">/ 03 — In development</div>
         <div class="body"><span class="tag">In development</span><h3 class="lower">bio.bond</h3><p>Plastic-free bonding and restorative material, tested in the open.</p></div>
@@ -707,7 +707,7 @@ h1,h2{letter-spacing:-.018em}
         <div class="brand">bio<span style="color:var(--oxide)">.</span></div>
         <p>A new standard for what touches you. Plastic-free dental care, tested in the open. Retainers first.</p>
       </div>
-      <div class="fcol"><h4>Products</h4><a href="/retainers/">bio.retainers</a><span style="color:var(--sage)">bio.aligners — soon</span><span style="color:var(--sage)">bio.bond — soon</span></div>
+      <div class="fcol"><h4>Products</h4><a href="/retainers/">bio.retainers</a><a href="/aligners/">bio.aligners</a><span style="color:var(--sage)">bio.bond — soon</span></div>
       <div class="fcol"><h4>Company</h4><a href="/standard/">The bio. Standard</a><a href="/journal/">Journal</a><a href="/about/">About</a><a href="/shop/">Shop</a><a href="/faq/">FAQ</a></div>
       <div class="fcol"><h4>Contact</h4><a href="mailto:hello@bio.uk">hello@bio.uk</a><a href="https://www.trustpilot.com" target="_blank" rel="noopener">Trustpilot ★★★★★</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></div>
     </div>
@@ -806,8 +806,13 @@ h1,h2{letter-spacing:-.018em}
     var input=document.getElementById('capemail-'+which);
     var email=(input&&input.value||'').trim();
     if(!email) return false;
-    // TODO: send `email` to your email provider here.
-    // Example (Mailchimp embedded form): POST to your list's form-action URL.
+    // Send to hello@getbiodental.co.uk via FormSubmit (no backend needed)
+    try{
+      fetch('https://formsubmit.co/ajax/hello@getbiodental.co.uk',{
+        method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body:JSON.stringify({_subject:'bio. email signup',email:email,source:which,page:location.pathname})
+      });
+    }catch(_){}
     try{ if(window.fbq) fbq('track','Lead'); }catch(_){}
     try{ if(window.gtag) gtag('event','generate_lead'); }catch(_){}
     var form=document.getElementById('capform-'+which);

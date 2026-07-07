@@ -4,16 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light only">
-<title>About bio. — plastic-free dental care</title>
-<meta name="description" content="Why we built bio. — the dental brand asking what your retainer is actually made of, and publishing the answer.">
+<title>bio.aligners — specialist-designed clear aligners, opening soon</title>
+<meta name="description" content="Clear aligners designed by UK specialist orthodontists, made from independently tested and disclosed materials. Register for priority access.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://getbiodental.co.uk/about/">
+<link rel="canonical" href="https://getbiodental.co.uk/aligners/">
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="bio.">
-<meta property="og:title" content="About bio. — plastic-free dental care">
-<meta property="og:description" content="Why we built bio. — the dental brand asking what your retainer is actually made of, and publishing the answer.">
-<meta property="og:url" content="https://getbiodental.co.uk/about/">
+<meta property="og:title" content="bio.aligners — specialist-designed clear aligners, opening soon">
+<meta property="og:description" content="Clear aligners designed by UK specialist orthodontists, made from independently tested and disclosed materials. Register for priority access.">
+<meta property="og:url" content="https://getbiodental.co.uk/aligners/">
 <meta property="og:image" content="https://www.biosmile.uk/assets/bio-box.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="bio. — Dentistry free from plastic">
@@ -552,6 +552,18 @@ h1,h2{letter-spacing:-.018em}
 
   Once live, the email-capture handler already fires fbq('Lead') and gtag('generate_lead').
 -->
+
+<style>
+.alform{display:grid;gap:14px;max-width:520px;margin:28px auto 0;text-align:left}
+.alform label{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+.alform input,.alform select{width:100%;font-family:var(--sans);font-size:15px;padding:14px 16px;border:1px solid var(--line);border-radius:3px;background:var(--bone);color:var(--ink);box-sizing:border-box}
+.alform input:focus,.alform select:focus{outline:2px solid var(--oxide);outline-offset:1px}
+.alform .consent{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:var(--ink-soft);font-family:var(--sans);text-transform:none;letter-spacing:0}
+.alform .consent input{width:auto;margin-top:3px}
+.alsteps{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:40px}
+@media(max-width:900px){.alsteps{grid-template-columns:1fr}}
+.alstep .idx{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--oxide);margin-bottom:10px}
+</style>
 </head>
 <body>
 <header>
@@ -569,49 +581,64 @@ h1,h2{letter-spacing:-.018em}
     </div>
   </nav>
 </header>
+
 <main id="app">
-<div class="page active" id="page-about">
+<div class="page active" id="page-aligners">
+
   <section class="hero wrap">
-    <span class="eyebrow">About bio.</span>
-    <h1 class="lower">A question nobody <em>was asking.</em></h1>
-    <p class="lead" style="margin-top:24px">If you care what's in your food, your skincare, your cleaning products — why would you not care about what's in the device you wear in your mouth for eight hours every night?</p>
-    <div class="figbox wide" style="margin-top:48px;aspect-ratio:16/9"><img loading="lazy" decoding="async" data-lazyimg data-src="/assets/about-cedfe4d0e7.jpg" alt="A woman in a calm, sunlit bathroom" loading="lazy"></div>
+    <span class="eyebrow">In development · Priority list open</span>
+    <h1 class="lower">bio.aligners. Straighter teeth, <em>less plastic.</em></h1>
+    <p class="lead" style="margin-top:20px">Clear aligners are worn 22 hours a day — and no UK aligner brand publishes what its material sheds during wear. bio.aligners will be different: every case designed by a UK-registered specialist orthodontist, made from a material we test and disclose in full at <a href="/standard/">the bio. Standard</a>.</p>
   </section>
 
-  <section class="wrap">
-    <div class="two narrow">
-      <div><h2 class="lower">We built bio. to answer it.</h2></div>
-      <div>
-        <p class="lead">Most retainers are standard thermoplastic, and most aligner brands have never published what their materials shed during wear. Nobody was even asking the question.</p>
-        <p class="lead" style="margin-top:18px">bio. retainers are the only ones in the UK independently tested for microplastic release and confirmed clean. Every claim on this site is backed by published data.</p>
-      </div>
+  <section class="wrap" style="padding-top:0">
+    <div class="capture" id="alcapture">
+      <span class="eyebrow">Priority access</span>
+      <h2 class="lower">Be first in line.</h2>
+      <p>We're opening bio.aligners to a founding cohort. Join the priority list for first access, founding-patient pricing, and honest updates on our testing as it's published.</p>
+      <form class="alform" id="alform" onsubmit="return alignerSubmit(event)">
+        <div><label for="al-name">Name</label><input type="text" id="al-name" required autocomplete="name"></div>
+        <div><label for="al-email">Email</label><input type="email" id="al-email" required autocomplete="email"></div>
+        <div><label for="al-phone">Phone (optional)</label><input type="tel" id="al-phone" autocomplete="tel"></div>
+        <div><label for="al-concern">What would you like to change?</label>
+          <select id="al-concern">
+            <option value="">Select one</option>
+            <option>Crowding</option>
+            <option>Gaps</option>
+            <option>Teeth moved back after braces</option>
+            <option>Bite issues</option>
+            <option>Not sure yet</option>
+          </select></div>
+        <label class="consent"><input type="checkbox" id="al-consent" required><span>I'm happy for bio. to email me about bio.aligners and related products. Unsubscribe anytime. See our <a href="/privacy/">privacy policy</a>.</span></label>
+        <button type="submit" class="btn" style="justify-self:start">Join the priority list</button>
+      </form>
+      <div class="capok" id="alok">Thank you — you're on the list. We'll be in touch with next steps.</div>
+      <div class="capnote">No spam. No obligation. Founding cohort is limited.</div>
     </div>
   </section>
 
   <section class="wrap">
-    <div class="figbox wide" style="aspect-ratio:16/8"><img loading="lazy" decoding="async" data-lazyimg data-src="/assets/about-b8476f901b.jpg" alt="A retainer case, a handwritten note and a glass of water on a windowsill" loading="lazy"></div>
-  </section>
-
-  <section class="wrap">
-    <span class="eyebrow">The parallel</span>
-    <div style="padding:24px 0"><p class="pull" style="max-width:34ch">The clean beauty movement reformed skincare over a decade. The dental device industry has never been held to the same standard. bio. is that brand for oral care.</p></div>
-  </section>
-
-  <section class="wrap">
-    <span class="eyebrow">How we operate</span>
-    <h2 class="lower">Three things we'll never compromise on</h2>
-    <div class="values">
-      <div class="val"><div class="rn">I</div><h3>If we can't test it, we don't claim it.</h3><p>Every material claim is backed by independent lab testing, filed, and linked publicly.</p></div>
-      <div class="val"><div class="rn">II</div><h3>Supervision is not optional.</h3><p>Every case is managed by a registered UK clinician. Clean materials and proper supervision are the same product.</p></div>
-      <div class="val"><div class="rn">III</div><h3>Adult tone, always.</h3><p>No adjectives without evidence. No fear marketing. We write for our customer, not at them.</p></div>
+    <span class="eyebrow">How it will work</span>
+    <div class="alsteps">
+      <div class="alstep"><div class="idx">/ 01</div><h3 class="lower">Free online consultation</h3><p>Tell us about your teeth. Our clinical team reviews suitability honestly — we won't take cases we can't treat well.</p></div>
+      <div class="alstep"><div class="idx">/ 02</div><h3 class="lower">One scan appointment</h3><p>A single visit near you for a digital scan. Everything else happens at home.</p></div>
+      <div class="alstep"><div class="idx">/ 03</div><h3 class="lower">Designed, delivered, monitored</h3><p>A UK specialist orthodontist designs your plan. Your aligners arrive at your door, with remote check-ins throughout — and bio.retainers at the end.</p></div>
     </div>
   </section>
 
-  <section class="ctaband"><div class="wrap"><span class="eyebrow">bio.retainers</span><h2 class="lower">The only retainer confirmed clean.</h2><p>From £100 per arch. From £140/year subscription. Delivered to your door.</p><a href="/shop/" class="btn lg">Order bio.retainers</a></div></section>
+  <section class="wrap">
+    <span class="eyebrow">Questions</span>
+    <div class="faq" style="margin-top:24px">
+      <details open><summary>What will bio.aligners be made of? <span class="plus">+</span></summary><div class="ans">A material chosen for the cleanest available profile in its category — independently tested by an ISO 17025-accredited laboratory, with results published by lot at the bio. Standard. Aligners are replaced every one to two weeks, so their exposure profile differs from retainers; we're honest about that distinction and publish what we find.</div></details>
+      <details><summary>Who designs the treatment? <span class="plus">+</span></summary><div class="ans">Every case will be personally designed and approved by a UK-registered specialist orthodontist — not software alone, and not a general dentist.</div></details>
+      <details><summary>Who is it for? <span class="plus">+</span></summary><div class="ans">Mild to moderate crowding, gaps, bite issues, and post-brace relapse. Suitability is confirmed honestly at the free consultation.</div></details>
+      <details><summary>When does it open? <span class="plus">+</span></summary><div class="ans">We're finalising our clinical network now. Priority list members hear first, with founding-patient pricing.</div></details>
+    </div>
+  </section>
+
 </div>
-
-<!-- ============ FAQ ============ -->
 </main>
+
 <footer>
   <div class="wrap">
     <div class="fgrid">
@@ -626,6 +653,7 @@ h1,h2{letter-spacing:-.018em}
     <div class="fbottom"><span>© 2026 bio. All rights reserved.</span><span>Oravertis Ltd · United Kingdom</span></div>
   </div>
 </footer>
+
 <script>
 (function(){
   var pages={'/':'home','/home':'home','/shop':'shop','/order':'order','/retainers':'retainers','/standard':'standard','/about':'about','/faq':'faq','/journal':'journal','/privacy':'privacy','/terms':'terms'};
@@ -965,6 +993,36 @@ h1,h2{letter-spacing:-.018em}
   imgs.forEach(function(el){ io.observe(el); });
   vids.forEach(function(el){ io.observe(el); });
 })();
+</script>
+
+
+
+
+<script>
+function alignerSubmit(e){
+  e.preventDefault();
+  var name=document.getElementById('al-name').value.trim();
+  var email=document.getElementById('al-email').value.trim();
+  if(!name||!email) return false;
+  try{
+    fetch('https://formsubmit.co/ajax/hello@getbiodental.co.uk',{
+      method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify({
+        _subject:'bio.aligners priority list signup',
+        name:name,email:email,
+        phone:document.getElementById('al-phone').value.trim(),
+        concern:document.getElementById('al-concern').value,
+        page:location.pathname
+      })
+    });
+  }catch(_){}
+  try{ if(window.fbq) fbq('track','Lead'); }catch(_){}
+  try{ if(window.gtag) gtag('event','generate_lead',{lead_type:'aligners'}); }catch(_){}
+  document.getElementById('alform').style.display='none';
+  document.getElementById('alok').style.display='block';
+  try{ localStorage.setItem('bio_lead','1'); }catch(_){}
+  return false;
+}
 </script>
 </body>
 </html>

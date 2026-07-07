@@ -141,6 +141,7 @@ html{scroll-behavior:smooth;background:#EFEAE0}
   header{background:rgba(239,234,224,.86) !important}
   .navlinks{background:#EFEAE0 !important;z-index:120}
   .navlinks a{color:#403D34 !important}
+  .navlinks a.btn{color:#EFEAE0 !important}
   .figbox,.hero-figure{background:#E4DDD0 !important}
   /* dark sections keep their dark palette with light text */
   .pcard.feat,.ctaband{background:#1A1915 !important;color:#EFEAE0 !important}
@@ -197,6 +198,7 @@ nav{display:flex;align-items:center;justify-content:space-between;height:72px;ma
 .brand span{color:var(--oxide)}
 .navlinks{display:flex;align-items:center;gap:30px}
 .navlinks a{font-size:14.5px;color:var(--ink-soft);transition:color .2s}
+.navlinks a.btn{color:var(--bone)}
 .navlinks a:hover,.navlinks a.active{color:var(--ink)}
 .btn{
   font-family:var(--sans);font-size:14.5px;font-weight:500;
@@ -417,7 +419,7 @@ footer{border-top:1px solid var(--line);padding:64px 0 48px}
 
 /* ---------- responsive ---------- */
 @media(max-width:900px){
-  .navlinks{position:fixed;inset:72px 0 auto;z-index:120;background:#EFEAE0;flex-direction:column;align-items:flex-start;gap:0;padding:8px 28px 24px;border-bottom:1px solid var(--line);box-shadow:0 18px 40px -20px rgba(26,25,21,.45);transform:translateY(-120%);transition:transform .3s,visibility .3s;height:auto;visibility:hidden;pointer-events:none}
+  .navlinks{position:fixed;inset:72px 0 auto;z-index:200;background:#EFEAE0 !important;flex-direction:column;align-items:flex-start;gap:0;padding:8px 28px 24px;border-bottom:1px solid var(--line);box-shadow:0 18px 40px -20px rgba(26,25,21,.45);transform:translateY(-120%);transition:transform .3s,visibility .3s;height:auto;visibility:hidden;pointer-events:none}
   .navlinks.open{transform:none;visibility:visible;pointer-events:auto}
   .navlinks a{padding:14px 0;width:100%;border-bottom:1px solid var(--line-soft);font-size:16px}
   .navlinks .btn{margin-top:14px;width:100%;text-align:center}
@@ -427,6 +429,7 @@ footer{border-top:1px solid var(--line);padding:64px 0 48px}
   .stat:last-child{border-bottom:0}
   .two,.two.narrow{grid-template-columns:1fr;gap:36px}
   .risks,.mats,.values{grid-template-columns:1fr}
+  .jgrid{grid-template-columns:1fr}
   .methods,.pricing{grid-template-columns:1fr}
   .prod{grid-template-columns:1fr;gap:18px}
   .prod .idx{order:-1}
@@ -475,7 +478,8 @@ footer{border-top:1px solid var(--line);padding:64px 0 48px}
 /* --- paper texture on bone background --- */
 body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.025;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)'/%3E%3C/svg%3E")}
-header,main,footer,.annbar,.modal-bg{position:relative;z-index:2}
+header{position:relative;z-index:100}
+main,footer,.annbar,.modal-bg{position:relative;z-index:2}
 
 /* --- refined headline tracking --- */
 h1,h2{letter-spacing:-.018em}
@@ -606,7 +610,7 @@ h1,h2{letter-spacing:-.018em}
         <div class="brand">bio<span style="color:var(--oxide)">.</span></div>
         <p>A new standard for what touches you. Plastic-free dental care, tested in the open. Retainers first.</p>
       </div>
-      <div class="fcol"><h4>Products</h4><a href="/retainers/">bio.retainers</a><span style="color:var(--sage)">bio.aligners — soon</span><span style="color:var(--sage)">bio.bond — soon</span></div>
+      <div class="fcol"><h4>Products</h4><a href="/retainers/">bio.retainers</a><a href="/aligners/">bio.aligners</a><span style="color:var(--sage)">bio.bond — soon</span></div>
       <div class="fcol"><h4>Company</h4><a href="/standard/">The bio. Standard</a><a href="/journal/">Journal</a><a href="/about/">About</a><a href="/shop/">Shop</a><a href="/faq/">FAQ</a></div>
       <div class="fcol"><h4>Contact</h4><a href="mailto:hello@bio.uk">hello@bio.uk</a><a href="https://www.trustpilot.com" target="_blank" rel="noopener">Trustpilot ★★★★★</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></div>
     </div>
@@ -705,8 +709,13 @@ h1,h2{letter-spacing:-.018em}
     var input=document.getElementById('capemail-'+which);
     var email=(input&&input.value||'').trim();
     if(!email) return false;
-    // TODO: send `email` to your email provider here.
-    // Example (Mailchimp embedded form): POST to your list's form-action URL.
+    // Send to hello@getbiodental.co.uk via FormSubmit (no backend needed)
+    try{
+      fetch('https://formsubmit.co/ajax/hello@getbiodental.co.uk',{
+        method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body:JSON.stringify({_subject:'bio. email signup',email:email,source:which,page:location.pathname})
+      });
+    }catch(_){}
     try{ if(window.fbq) fbq('track','Lead'); }catch(_){}
     try{ if(window.gtag) gtag('event','generate_lead'); }catch(_){}
     var form=document.getElementById('capform-'+which);
