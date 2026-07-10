@@ -1071,28 +1071,52 @@ function bookingBack(){
   document.getElementById('bkform').style.display='none';
   document.getElementById('bkstep1').style.display='block';
 }
+/* Supabase config */
+var SUPABASE_URL = 'https://ldtlfxgpsebbrurqsnhw.supabase.co';
+var SUPABASE_ANON_KEY = 'sb_publishable_sr9beNj5pWgpyKKaJFBuQA_9QNvGh-B';
+
 function bookingSubmit(e){
   e.preventDefault();
   var name=document.getElementById('bk-name').value.trim();
   var email=document.getElementById('bk-email').value.trim();
   var phone=document.getElementById('bk-phone').value.trim();
+  var concern=document.getElementById('bk-concern').value;
   if(!name||!email||!phone||!bkChosen) return false;
+
+  // 1) Save to Supabase database (non-blocking)
+  if(SUPABASE_URL.indexOf('http')===0){
+    try{
+      fetch(SUPABASE_URL+'/rest/v1/consultations',{
+        method:'POST',
+        headers:{
+          'Content-Type':'application/json',
+          'apikey':SUPABASE_ANON_KEY,
+          'Prefer':'return=minimal'
+        },
+        body:JSON.stringify({name:name,email:email,phone:phone,slot:bkChosen,concern:concern,status:'Requested'})
+      });
+    }catch(_){}
+  }
+
+  // 2) Email notification to bio. (backup + instant alert)
   try{
     fetch('https://formsubmit.co/ajax/hello@getbiodental.co.uk',{
       method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
       body:JSON.stringify({
         _subject:'bio.aligners consultation booking',
-        slot:bkChosen, name:name, email:email, phone:phone,
-        concern:document.getElementById('bk-concern').value,
-        page:location.pathname
+        slot:bkChosen, name:name, email:email, phone:phone, concern:concern, page:location.pathname
       })
     });
   }catch(_){}
+
+  // 3) Analytics
   try{ if(window.fbq) fbq('track','Lead'); }catch(_){}
   try{ if(window.gtag) gtag('event','generate_lead',{lead_type:'aligner_consultation'}); }catch(_){}
-  document.getElementById('bkwidget').style.display='none';
-  document.getElementById('bkok').style.display='block';
   try{ localStorage.setItem('bio_lead','1'); }catch(_){}
+
+  // 4) Redirect to confirmation page with details
+  var q = '?name='+encodeURIComponent(name)+'&email='+encodeURIComponent(email)+'&slot='+encodeURIComponent(bkChosen)+'&concern='+encodeURIComponent(concern);
+  window.location.href = '/aligners/confirmed/'+q;
   return false;
 }
 </script>

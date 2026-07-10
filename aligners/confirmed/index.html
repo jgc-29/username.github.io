@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light only">
+<title>Consultation confirmed — bio.</title>
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://getbiodental.co.uk/aligners/confirmed/">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-480295072"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-480295072');
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bone:#EFEAE0; --bone-deep:#E4DDD0; --ink:#1A1915; --ink-soft:#403D34;
+    --oxide:#8B3A2E; --oxide-deep:#742F25; --sage:#8E9582;
+    --line:rgba(26,25,21,.14);
+    --serif:"Fraunces",Georgia,serif;
+    --sans:"Instrument Sans",system-ui,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,monospace;
+    color-scheme:light only;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;min-height:100%;background:var(--bone);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+  .wrap{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:56px 24px}
+  .mark{font-family:var(--serif);font-weight:500;font-size:22px;letter-spacing:-0.01em;margin-bottom:40px}
+  .mark a{color:var(--ink);text-decoration:none}
+  .seal{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--oxide);margin-bottom:18px}
+  h1{font-family:var(--serif);font-weight:400;font-size:clamp(30px,6vw,48px);line-height:1.08;letter-spacing:-0.015em;margin:0 0 18px;max-width:20ch}
+  p{max-width:46ch;line-height:1.65;color:var(--ink-soft);margin:0 0 14px;font-size:16px}
+  .card{margin-top:30px;padding:26px 28px;border:1px solid var(--line);border-radius:4px;max-width:44ch;text-align:left;background:var(--bone-deep);width:100%}
+  .card .row{display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+  .card .row:last-child{border-bottom:0}
+  .card .k{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);white-space:nowrap}
+  .card .v{color:var(--ink);text-align:right;font-weight:500}
+  .next{margin-top:26px;text-align:left;max-width:44ch;width:100%}
+  .next h2{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);margin:0 0 12px}
+  .next ol{margin:0;padding-left:18px;color:var(--ink-soft);line-height:1.6;font-size:14.5px}
+  .next li{margin-bottom:7px}
+  .btn{display:inline-block;margin-top:34px;background:var(--oxide);color:var(--bone);text-decoration:none;padding:14px 30px;border-radius:2px;font-size:15px;font-weight:500}
+  .btn:hover{background:var(--oxide-deep)}
+  .foot{margin-top:44px;font-family:var(--mono);font-size:11px;color:var(--sage)}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="mark"><a href="/">bio.</a></div>
+
+    <div class="seal">Consultation requested</div>
+    <h1 id="head">Thank you<span id="firstname"></span>. Your consultation is booked.</h1>
+    <p>We've received your request and sent a confirmation to your email. We'll be in touch to confirm your slot.</p>
+
+    <div class="card" id="detailcard" style="display:none">
+      <div class="row"><span class="k">When</span><span class="v" id="d-slot">—</span></div>
+      <div class="row"><span class="k">Name</span><span class="v" id="d-name">—</span></div>
+      <div class="row"><span class="k">Email</span><span class="v" id="d-email">—</span></div>
+      <div class="row" id="row-concern"><span class="k">Focus</span><span class="v" id="d-concern">—</span></div>
+    </div>
+
+    <div class="next">
+      <h2>What happens next</h2>
+      <ol>
+        <li>You'll receive a confirmation email shortly (check spam if it's not there).</li>
+        <li>We'll confirm your 5:30pm slot and send a video-call link.</li>
+        <li>On the call, we review your teeth, confirm suitability honestly, and talk you through the plan and pricing.</li>
+      </ol>
+    </div>
+
+    <a class="btn" href="/">Back to bio.</a>
+    <div class="foot">bio. — getbiodental.co.uk · hello@getbiodental.co.uk</div>
+  </div>
+
+<script>
+  (function(){
+    function esc(s){ var d=document.createElement('div'); d.textContent=s; return d.innerHTML; }
+    var p = new URLSearchParams(location.search);
+    var name = p.get('name')||'', email=p.get('email')||'', slot=p.get('slot')||'', concern=p.get('concern')||'';
+    if(name){
+      var first = name.trim().split(' ')[0];
+      document.getElementById('firstname').textContent = ', '+first;
+    }
+    if(name||email||slot){
+      document.getElementById('detailcard').style.display='block';
+      document.getElementById('d-slot').textContent = slot || '—';
+      document.getElementById('d-name').textContent = name || '—';
+      document.getElementById('d-email').textContent = email || '—';
+      if(concern){ document.getElementById('d-concern').textContent = concern; }
+      else { document.getElementById('row-concern').style.display='none'; }
+    }
+    // Fire conversion on the confirmation view too (covers URL-based tracking)
+    try{ if(window.gtag) gtag('event','generate_lead',{lead_type:'aligner_consultation'}); }catch(_){}
+  })();
+</script>
+</body>
+</html>
