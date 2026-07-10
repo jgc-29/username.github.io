@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light only">
 <title>bio.aligners — specialist-designed clear aligners, opening soon</title>
@@ -14,10 +17,10 @@
 <meta property="og:title" content="bio.aligners — specialist-designed clear aligners, opening soon">
 <meta property="og:description" content="Clear aligners designed by UK specialist orthodontists, made from independently tested and disclosed materials. Register for priority access.">
 <meta property="og:url" content="https://getbiodental.co.uk/aligners/">
-<meta property="og:image" content="https://www.biosmile.uk/assets/bio-box.jpg">
+<meta property="og:image" content="https://getbiodental.co.uk/assets/hero-poster.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="bio. — Dentistry free from plastic">
-<meta name="twitter:description" content="The only UK retainer independently tested and confirmed free from harmful microplastics.">
+<meta name="twitter:description" content="The only UK retainer independently tested for microplastic and BPA-derivative release, with results published by lot.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,9 +42,9 @@
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "bio.retainers",
-  "description": "Plastic-free dental retainer made from a bio-derived polymer, independently tested lot by lot for microplastic particle release. The only UK retainer confirmed free from harmful microplastics.",
+  "description": "Plastic-free dental retainer made from a bio-derived polymer, independently tested lot by lot for microplastic particle release. Independently tested for microplastic release — results published by lot.",
   "brand": { "@type": "Brand", "name": "bio." },
-  "image": "https://www.biosmile.uk/assets/bio-box.jpg",
+  "image": "https://getbiodental.co.uk/assets/hero-poster.jpg",
   "offers": {
     "@type": "AggregateOffer",
     "priceCurrency": "GBP",
@@ -101,7 +104,7 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type":"Question","name":"What are bio. retainers made of?","acceptedAnswer":{"@type":"Answer","text":"A bio-derived, plant-based polymer — independently tested and confirmed free from harmful microplastics, BPA, BPS, BPF and phthalates. No other UK retainer brand has published equivalent testing."}},
+    {"@type":"Question","name":"What are bio. retainers made of?","acceptedAnswer":{"@type":"Answer","text":"A bio-derived, plant-based polymer — independently tested for microplastic and BPA-derivative release, with results published by lot, BPA, BPS, BPF and phthalates. No other UK retainer brand has published equivalent testing."}},
     {"@type":"Question","name":"Why are bio. retainers the only ones free from microplastics?","acceptedAnswer":{"@type":"Answer","text":"Every retainer in the UK market is made from standard thermoplastic that has not been independently tested for microplastic shedding. bio. is the first to test ours and the first to publish the data."}},
     {"@type":"Question","name":"How does the impression kit work?","acceptedAnswer":{"@type":"Answer","text":"Order online and your kit arrives next day with step-by-step instructions and a video walkthrough. It takes about 10 minutes at home. Post it back in the included pre-paid packaging. Custom retainers are delivered within 5 working days."}},
     {"@type":"Question","name":"Why do I need to replace my retainer each year?","acceptedAnswer":{"@type":"Answer","text":"Teeth shift and materials age. An annual replacement is the standard of care, and the subscription keeps a fresh, tested set on your teeth without re-ordering."}},
@@ -560,6 +563,16 @@ h1,h2{letter-spacing:-.018em}
 .alform input:focus,.alform select:focus{outline:2px solid var(--oxide);outline-offset:1px}
 .alform .consent{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:var(--ink-soft);font-family:var(--sans);text-transform:none;letter-spacing:0}
 .alform .consent input{width:auto;margin-top:3px}
+.bkwidget{max-width:520px;margin:24px auto 0;text-align:left}
+.bklabel{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--oxide);margin-bottom:14px}
+.bkslots{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:520px){.bkslots{grid-template-columns:1fr}}
+.bkslot{font-family:var(--sans);font-size:14.5px;text-align:left;padding:14px 16px;border:1px solid var(--line);border-radius:3px;background:var(--bone);color:var(--ink);cursor:pointer;transition:border-color .15s,background .15s}
+.bkslot:hover{border-color:var(--oxide)}
+.bkslot .d{display:block;font-weight:500}
+.bkslot .t{display:block;font-family:var(--mono);font-size:12px;color:var(--ink-soft);margin-top:2px}
+.bknote{font-family:var(--mono);font-size:11px;color:var(--sage);margin-top:14px}
+.bkchosen{background:var(--bone-deep);border:1px solid var(--line);border-radius:3px;padding:12px 14px;margin-bottom:4px;font-size:14px;color:var(--ink)}
 .alsteps{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:40px}
 @media(max-width:900px){.alsteps{grid-template-columns:1fr}}
 .alstep .idx{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--oxide);margin-bottom:10px}
@@ -573,6 +586,7 @@ h1,h2{letter-spacing:-.018em}
     <div class="navlinks" id="navlinks">
       <a href="/shop/">Shop</a>
       <a href="/retainers/">bio.retainers</a>
+      <a href="/aligners/">bio.aligners</a>
       <a href="/standard/">The bio. Standard</a>
       <a href="/journal/">Journal</a>
       <a href="/about/">About</a>
@@ -586,34 +600,59 @@ h1,h2{letter-spacing:-.018em}
 <div class="page active" id="page-aligners">
 
   <section class="hero wrap">
-    <span class="eyebrow">In development · Priority list open</span>
+    <span class="eyebrow">Specialist-designed · now booking consultations</span>
     <h1 class="lower">bio.aligners. Straighter teeth, <em>less plastic.</em></h1>
-    <p class="lead" style="margin-top:20px">Clear aligners are worn 22 hours a day — and no UK aligner brand publishes what its material sheds during wear. bio.aligners will be different: every case designed by a UK-registered specialist orthodontist, made from a material we test and disclose in full at <a href="/standard/">the bio. Standard</a>.</p>
+    <p class="lead" style="margin-top:20px">Clear aligners are worn 22 hours a day — and no UK aligner brand publishes what its material sheds during wear. bio.aligners is different: every case designed by a UK-registered specialist orthodontist, made from a material we test and disclose in full at <a href="/standard/">the bio. Standard</a>.</p>
+    <div class="hero-proof">
+      <span><b>✓</b> Specialist orthodontist-designed</span>
+      <span><b>✓</b> Material tested &amp; published</span>
+      <span><b>✓</b> From £950 · free consultation</span>
+    </div>
+    <div class="hero-cta">
+      <a href="#book" class="btn lg">Book free consultation →</a>
+      <a href="/standard/" class="btn ghost lg">See the test results →</a>
+    </div>
+    <p class="capnote" style="margin-top:16px">Indicative pricing. Final cost confirmed at your free consultation, based on your treatment plan.</p>
   </section>
 
-  <section class="wrap" style="padding-top:0">
+  <section class="wrap" style="padding-top:0" id="book">
     <div class="capture" id="alcapture">
-      <span class="eyebrow">Priority access</span>
-      <h2 class="lower">Be first in line.</h2>
-      <p>We're opening bio.aligners to a founding cohort. Join the priority list for first access, founding-patient pricing, and honest updates on our testing as it's published.</p>
-      <form class="alform" id="alform" onsubmit="return alignerSubmit(event)">
-        <div><label for="al-name">Name</label><input type="text" id="al-name" required autocomplete="name"></div>
-        <div><label for="al-email">Email</label><input type="email" id="al-email" required autocomplete="email"></div>
-        <div><label for="al-phone">Phone (optional)</label><input type="tel" id="al-phone" autocomplete="tel"></div>
-        <div><label for="al-concern">What would you like to change?</label>
-          <select id="al-concern">
-            <option value="">Select one</option>
-            <option>Crowding</option>
-            <option>Gaps</option>
-            <option>Teeth moved back after braces</option>
-            <option>Bite issues</option>
-            <option>Not sure yet</option>
-          </select></div>
-        <label class="consent"><input type="checkbox" id="al-consent" required><span>I'm happy for bio. to email me about bio.aligners and related products. Unsubscribe anytime. See our <a href="/privacy/">privacy policy</a>.</span></label>
-        <button type="submit" class="btn" style="justify-self:start">Join the priority list</button>
-      </form>
-      <div class="capok" id="alok">Thank you — you're on the list. We'll be in touch with next steps.</div>
-      <div class="capnote">No spam. No obligation. Founding cohort is limited.</div>
+      <span class="eyebrow">Free consultation</span>
+      <h2 class="lower">Book your free consultation.</h2>
+      <p>A 15-minute video call to review your teeth, confirm suitability honestly, and talk you through bio.aligners. No obligation, no cost.</p>
+
+      <div class="bkwidget" id="bkwidget">
+        <div class="bkstep" id="bkstep1">
+          <div class="bklabel">1 &middot; Choose a time</div>
+          <div class="bkslots" id="bkslots"></div>
+          <div class="bknote">Consultations run at 5:30pm, Monday, Tuesday and Thursday.</div>
+        </div>
+
+        <form class="alform" id="bkform" style="display:none" onsubmit="return bookingSubmit(event)">
+          <div class="bklabel">2 &middot; Your details</div>
+          <div class="bkchosen" id="bkchosen"></div>
+          <div><label for="bk-name">Name</label><input type="text" id="bk-name" required autocomplete="name"></div>
+          <div><label for="bk-email">Email</label><input type="email" id="bk-email" required autocomplete="email"></div>
+          <div><label for="bk-phone">Phone</label><input type="tel" id="bk-phone" required autocomplete="tel"></div>
+          <div><label for="bk-concern">What would you like to change?</label>
+            <select id="bk-concern">
+              <option value="">Select one</option>
+              <option>Crowding</option>
+              <option>Gaps</option>
+              <option>Teeth moved back after braces</option>
+              <option>Bite issues</option>
+              <option>Not sure yet</option>
+            </select></div>
+          <label class="consent"><input type="checkbox" id="bk-consent" required><span>I'm happy for bio. to contact me about my consultation and bio.aligners. Unsubscribe anytime. See our <a href="/privacy/">privacy policy</a>.</span></label>
+          <div style="display:flex;gap:12px;flex-wrap:wrap">
+            <button type="button" class="btn ghost" onclick="bookingBack()">&larr; Change time</button>
+            <button type="submit" class="btn">Confirm consultation</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="capok" id="bkok">Thank you — your consultation request is in. We'll email you to confirm your 5:30pm slot. Please keep an eye on your inbox.</div>
+      <div class="capnote">Free &middot; 15 minutes &middot; no obligation</div>
     </div>
   </section>
 
@@ -632,7 +671,7 @@ h1,h2{letter-spacing:-.018em}
       <details open><summary>What will bio.aligners be made of? <span class="plus">+</span></summary><div class="ans">A material chosen for the cleanest available profile in its category — independently tested by an ISO 17025-accredited laboratory, with results published by lot at the bio. Standard. Aligners are replaced every one to two weeks, so their exposure profile differs from retainers; we're honest about that distinction and publish what we find.</div></details>
       <details><summary>Who designs the treatment? <span class="plus">+</span></summary><div class="ans">Every case will be personally designed and approved by a UK-registered specialist orthodontist — not software alone, and not a general dentist.</div></details>
       <details><summary>Who is it for? <span class="plus">+</span></summary><div class="ans">Mild to moderate crowding, gaps, bite issues, and post-brace relapse. Suitability is confirmed honestly at the free consultation.</div></details>
-      <details><summary>When does it open? <span class="plus">+</span></summary><div class="ans">We're finalising our clinical network now. Priority list members hear first, with founding-patient pricing.</div></details>
+      <details><summary>How do I start? <span class="plus">+</span></summary><div class="ans">Book a free consultation above. We'll review your teeth, confirm suitability honestly, and talk you through the plan and final pricing — no obligation.</div></details>
     </div>
   </section>
 
@@ -674,7 +713,7 @@ h1,h2{letter-spacing:-.018em}
     terms:'Terms & Conditions | bio.'
   };
   var descs={
-    home:'bio. retainers are the only UK retainers independently tested and confirmed free from harmful microplastics. Plastic-free dental care, tested in the open.',
+    home:'bio. retainers are the only UK retainers independently tested for microplastic and BPA-derivative release, with results published by lot. Plastic-free dental care, tested in the open.',
     shop:'Order bio.retainers — plastic-free, ISO 17025-tested, results published by lot. From £100 per arch. Impression kit or digital scan.',
     order:'Choose your bio.retainers — upper, lower or both arches, single set or annual subscription, with or without an impression kit. Secure Stripe checkout.',
     retainers:'The only UK retainer independently tested for microplastic release and confirmed clean. Bio-derived polymer, results published. From £100.',
@@ -999,27 +1038,60 @@ h1,h2{letter-spacing:-.018em}
 
 
 <script>
-function alignerSubmit(e){
+/* ---- Consultation booking widget ---- */
+var bkChosen='';
+(function buildSlots(){
+  var slots=document.getElementById('bkslots');
+  if(!slots) return;
+  var days={1:'Monday',2:'Tuesday',4:'Thursday'}; // Mon, Tue, Thu only
+  var months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  var out=[], d=new Date(), added=0, guard=0;
+  d.setDate(d.getDate()+1); // start tomorrow
+  while(added<6 && guard<40){
+    guard++;
+    var wd=d.getDay();
+    if(days[wd]){
+      var label=days[wd]+' '+d.getDate()+' '+months[d.getMonth()];
+      var iso=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+      out.push('<button type="button" class="bkslot" data-slot="'+label+' at 5:30pm ('+iso+')" onclick="bookingPick(this)"><span class="d">'+label+'</span><span class="t">5:30pm &middot; 15 min</span></button>');
+      added++;
+    }
+    d.setDate(d.getDate()+1);
+  }
+  slots.innerHTML=out.join('');
+})();
+
+function bookingPick(btn){
+  bkChosen=btn.getAttribute('data-slot');
+  document.getElementById('bkstep1').style.display='none';
+  document.getElementById('bkchosen').innerHTML='Selected: <strong>'+bkChosen+'</strong>';
+  document.getElementById('bkform').style.display='grid';
+}
+function bookingBack(){
+  document.getElementById('bkform').style.display='none';
+  document.getElementById('bkstep1').style.display='block';
+}
+function bookingSubmit(e){
   e.preventDefault();
-  var name=document.getElementById('al-name').value.trim();
-  var email=document.getElementById('al-email').value.trim();
-  if(!name||!email) return false;
+  var name=document.getElementById('bk-name').value.trim();
+  var email=document.getElementById('bk-email').value.trim();
+  var phone=document.getElementById('bk-phone').value.trim();
+  if(!name||!email||!phone||!bkChosen) return false;
   try{
     fetch('https://formsubmit.co/ajax/hello@getbiodental.co.uk',{
       method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
       body:JSON.stringify({
-        _subject:'bio.aligners priority list signup',
-        name:name,email:email,
-        phone:document.getElementById('al-phone').value.trim(),
-        concern:document.getElementById('al-concern').value,
+        _subject:'bio.aligners consultation booking',
+        slot:bkChosen, name:name, email:email, phone:phone,
+        concern:document.getElementById('bk-concern').value,
         page:location.pathname
       })
     });
   }catch(_){}
   try{ if(window.fbq) fbq('track','Lead'); }catch(_){}
-  try{ if(window.gtag) gtag('event','generate_lead',{lead_type:'aligners'}); }catch(_){}
-  document.getElementById('alform').style.display='none';
-  document.getElementById('alok').style.display='block';
+  try{ if(window.gtag) gtag('event','generate_lead',{lead_type:'aligner_consultation'}); }catch(_){}
+  document.getElementById('bkwidget').style.display='none';
+  document.getElementById('bkok').style.display='block';
   try{ localStorage.setItem('bio_lead','1'); }catch(_){}
   return false;
 }

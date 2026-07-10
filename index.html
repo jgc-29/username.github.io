@@ -2,22 +2,25 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light only">
 <title>bio. — Dentistry free from plastic</title>
-<meta name="description" content="bio. retainers are the only UK retainers independently tested and confirmed free from harmful microplastics. Plastic-free dental care, tested in the open.">
+<meta name="description" content="bio. retainers are the only UK retainers independently tested for microplastic and BPA-derivative release, with results published by lot. Plastic-free dental care, tested in the open.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://getbiodental.co.uk/">
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="bio.">
 <meta property="og:title" content="bio. — Dentistry free from plastic">
-<meta property="og:description" content="bio. retainers are the only UK retainers independently tested and confirmed free from harmful microplastics. Plastic-free dental care, tested in the open.">
+<meta property="og:description" content="bio. retainers are the only UK retainers independently tested for microplastic and BPA-derivative release, with results published by lot. Plastic-free dental care, tested in the open.">
 <meta property="og:url" content="https://getbiodental.co.uk/">
-<meta property="og:image" content="https://www.biosmile.uk/assets/bio-box.jpg">
+<meta property="og:image" content="https://getbiodental.co.uk/assets/hero-poster.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="bio. — Dentistry free from plastic">
-<meta name="twitter:description" content="The only UK retainer independently tested and confirmed free from harmful microplastics.">
+<meta name="twitter:description" content="The only UK retainer independently tested for microplastic and BPA-derivative release, with results published by lot.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,9 +42,9 @@
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "bio.retainers",
-  "description": "Plastic-free dental retainer made from a bio-derived polymer, independently tested lot by lot for microplastic particle release. The only UK retainer confirmed free from harmful microplastics.",
+  "description": "Plastic-free dental retainer made from a bio-derived polymer, independently tested lot by lot for microplastic particle release. Independently tested for microplastic release — results published by lot.",
   "brand": { "@type": "Brand", "name": "bio." },
-  "image": "https://www.biosmile.uk/assets/bio-box.jpg",
+  "image": "https://getbiodental.co.uk/assets/hero-poster.jpg",
   "offers": {
     "@type": "AggregateOffer",
     "priceCurrency": "GBP",
@@ -101,7 +104,7 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type":"Question","name":"What are bio. retainers made of?","acceptedAnswer":{"@type":"Answer","text":"A bio-derived, plant-based polymer — independently tested and confirmed free from harmful microplastics, BPA, BPS, BPF and phthalates. No other UK retainer brand has published equivalent testing."}},
+    {"@type":"Question","name":"What are bio. retainers made of?","acceptedAnswer":{"@type":"Answer","text":"A bio-derived, plant-based polymer — independently tested for microplastic and BPA-derivative release, with results published by lot, BPA, BPS, BPF and phthalates. No other UK retainer brand has published equivalent testing."}},
     {"@type":"Question","name":"Why are bio. retainers the only ones free from microplastics?","acceptedAnswer":{"@type":"Answer","text":"Every retainer in the UK market is made from standard thermoplastic that has not been independently tested for microplastic shedding. bio. is the first to test ours and the first to publish the data."}},
     {"@type":"Question","name":"How does the impression kit work?","acceptedAnswer":{"@type":"Answer","text":"Order online and your kit arrives next day with step-by-step instructions and a video walkthrough. It takes about 10 minutes at home. Post it back in the included pre-paid packaging. Custom retainers are delivered within 5 working days."}},
     {"@type":"Question","name":"Why do I need to replace my retainer each year?","acceptedAnswer":{"@type":"Answer","text":"Teeth shift and materials age. An annual replacement is the standard of care, and the subscription keeps a fresh, tested set on your teeth without re-ordering."}},
@@ -515,6 +518,20 @@ h1,h2{letter-spacing:-.018em}
 }
 /* --- hero conversion additions --- */
 .hero-proof{display:flex;flex-wrap:wrap;gap:10px 22px;margin:22px 0 4px}
+.paths{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:8px}
+@media(max-width:760px){.paths{grid-template-columns:1fr}}
+.path{display:block;text-decoration:none;color:inherit;background:var(--bone-deep);border:1px solid var(--line);border-radius:4px;padding:clamp(26px,3.4vw,40px);transition:border-color .18s,transform .18s,box-shadow .18s}
+.path:hover{border-color:var(--oxide);transform:translateY(-2px);box-shadow:0 20px 40px -28px rgba(26,25,21,.5)}
+.path-lead{background:var(--ink);border-color:var(--ink)}
+.path-lead h3,.path-lead .path-tag,.path-lead p,.path-lead .path-price,.path-lead .path-cta{color:var(--bone)}
+.path-lead p{color:var(--bone-deep)}
+.path-lead:hover{border-color:var(--oxide)}
+.path-tag{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--oxide);margin-bottom:12px}
+.path h3{font-size:clamp(24px,3.2vw,32px);margin-bottom:12px}
+.path p{color:var(--ink-soft);font-size:15px;line-height:1.6;margin-bottom:18px}
+.path-price{font-family:var(--mono);font-size:12.5px;color:var(--ink);margin-bottom:16px}
+.path-cta{font-weight:500;font-size:15px;color:var(--oxide)}
+.path-lead .path-cta{color:var(--bone)}
 .hero-proof span{font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--ink-soft);display:inline-flex;align-items:center;gap:7px}
 .hero-proof b{color:var(--oxide);font-size:13px}
 .hero-mission{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--sage);margin-top:22px}
@@ -542,6 +559,9 @@ h1,h2{letter-spacing:-.018em}
 
   Once live, the email-capture handler already fires fbq('Lead') and gtag('generate_lead').
 -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"bio.","url":"https://getbiodental.co.uk/","logo":"https://getbiodental.co.uk/assets/icon-512.png","email":"hello@getbiodental.co.uk","description":"Plastic-conscious dental devices: retainers and specialist-designed clear aligners, independently tested with results published by lot."}
+</script>
 </head>
 <body>
 <header>
@@ -551,6 +571,7 @@ h1,h2{letter-spacing:-.018em}
     <div class="navlinks" id="navlinks">
       <a href="/shop/">Shop</a>
       <a href="/retainers/">bio.retainers</a>
+      <a href="/aligners/">bio.aligners</a>
       <a href="/standard/">The bio. Standard</a>
       <a href="/journal/">Journal</a>
       <a href="/about/">About</a>
@@ -577,6 +598,26 @@ h1,h2{letter-spacing:-.018em}
     <p class="hero-mission">Taking plastic out of dentistry, one product at a time.</p>
     <div class="hero-figure">
       <video class="herovid" muted loop playsinline preload="none" data-lazy-video poster="/assets/hero-poster.jpg"><source data-src="/assets/hero-video.mp4" type="video/mp4"></video>
+    </div>
+  </section>
+
+  <section class="wrap" style="padding-top:0">
+    <span class="eyebrow">Two ways to straighten &mdash; both plastic-conscious</span>
+    <div class="paths">
+      <a class="path path-lead" href="/aligners/">
+        <div class="path-tag">Straighten your teeth</div>
+        <h3 class="lower">bio.aligners</h3>
+        <p>Clear aligners designed by a UK specialist orthodontist. One scan visit, everything else at home &mdash; from a material we test and disclose in full.</p>
+        <div class="path-price">from £950 &middot; free consultation</div>
+        <div class="path-cta">Book free consultation &rarr;</div>
+      </a>
+      <a class="path" href="/retainers/">
+        <div class="path-tag">Keep them straight</div>
+        <h3 class="lower">bio.retainers</h3>
+        <p>The retainer independently tested and confirmed free from plastic shedding &mdash; published lot by lot. Order today.</p>
+        <div class="path-price">from £100 &middot; subscription from £140/yr</div>
+        <div class="path-cta">Order your retainers &rarr;</div>
+      </a>
     </div>
   </section>
 
@@ -640,10 +681,10 @@ h1,h2{letter-spacing:-.018em}
         </div>
         <div class="act"><a href="/retainers/" class="btn">View bio.retainers →</a></div>
       </div>
-      <a class="prod soon" href="/aligners/" style="text-decoration:none;color:inherit">
-        <div class="idx">/ 02 — In development</div>
-        <div class="body"><span class="tag">In development</span><h3 class="lower">bio.aligners</h3><p>Clear aligners shed the most plastic of any device. Ours won't.</p></div>
-        <div class="act">Join the priority list &rarr;</div>
+      <a class="prod" href="/aligners/" style="text-decoration:none;color:inherit">
+        <div class="idx">/ 02 — Now booking</div>
+        <div class="body"><span class="tag">Free consultation</span><h3 class="lower">bio.aligners</h3><p>Specialist-designed clear aligners, from a material we test and disclose. From £950.</p></div>
+        <div class="act">Book free consultation &rarr;</div>
       </a>
       <div class="prod soon">
         <div class="idx">/ 03 — In development</div>
@@ -734,7 +775,7 @@ h1,h2{letter-spacing:-.018em}
     terms:'Terms & Conditions | bio.'
   };
   var descs={
-    home:'bio. retainers are the only UK retainers independently tested and confirmed free from harmful microplastics. Plastic-free dental care, tested in the open.',
+    home:'bio. retainers are the only UK retainers independently tested for microplastic and BPA-derivative release, with results published by lot. Plastic-free dental care, tested in the open.',
     shop:'Order bio.retainers — plastic-free, ISO 17025-tested, results published by lot. From £100 per arch. Impression kit or digital scan.',
     order:'Choose your bio.retainers — upper, lower or both arches, single set or annual subscription, with or without an impression kit. Secure Stripe checkout.',
     retainers:'The only UK retainer independently tested for microplastic release and confirmed clean. Bio-derived polymer, results published. From £100.',
