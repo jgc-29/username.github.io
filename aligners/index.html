@@ -574,6 +574,25 @@ h1,h2{letter-spacing:-.018em}
 .bknote{font-family:var(--mono);font-size:11px;color:var(--sage);margin-top:14px}
 .bkchosen{background:var(--bone-deep);border:1px solid var(--line);border-radius:3px;padding:12px 14px;margin-bottom:4px;font-size:14px;color:var(--ink)}
 .alsteps{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:40px}
+.cases{display:grid;gap:28px;margin-top:32px}
+.hook-cases{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:8px}
+@media(max-width:640px){.hook-cases{grid-template-columns:1fr}}
+.hook-pair{margin:0;position:relative;border:1px solid var(--line);border-radius:5px;overflow:hidden}
+.hook-pair img{width:50%;display:inline-block;vertical-align:top;aspect-ratio:16/9;object-fit:cover}
+.hook-pair figcaption{display:flex;justify-content:space-between;position:absolute;top:10px;left:0;right:0;padding:0 10px;pointer-events:none}
+.hook-pair figcaption span{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--bone);background:rgba(26,25,21,.72);padding:4px 9px;border-radius:2px}
+.hook-pair figcaption .af{background:var(--oxide)}
+.hook-note{font-family:var(--mono);font-size:12px;color:var(--ink-soft);margin-top:16px}
+.hook-note a{color:var(--oxide)}
+.case{border:1px solid var(--line);border-radius:5px;overflow:hidden;background:var(--bone-deep)}
+.case-imgs{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.case-imgs figure{margin:0;position:relative}
+.case-imgs img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+.case-imgs figcaption{position:absolute;top:10px;left:10px;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--bone);background:rgba(26,25,21,.72);padding:4px 9px;border-radius:2px}
+.case-imgs figure.after figcaption{background:var(--oxide)}
+.case-meta{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;padding:14px 18px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);border-top:1px solid var(--line)}
+.case-meta .type{color:var(--oxide)}
+@media(max-width:560px){.case-meta{font-size:10px}}
 @media(max-width:900px){.alsteps{grid-template-columns:1fr}}
 .alstep .idx{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--oxide);margin-bottom:10px}
 </style>
@@ -615,6 +634,22 @@ h1,h2{letter-spacing:-.018em}
     <p class="capnote" style="margin-top:16px">Indicative pricing. Final cost confirmed at your free consultation, based on your treatment plan.</p>
   </section>
 
+  <section class="wrap" style="padding-top:0">
+    <div class="hook-cases">
+      <figure class="hook-pair">
+        <img loading="lazy" src="/assets/cases/IMG_6940.jpg" alt="Before clear aligner treatment — gaps and spacing">
+        <img loading="lazy" src="/assets/cases/IMG_6941.jpg" alt="After clear aligner treatment — gaps closed">
+        <figcaption><span>Before</span><span class="af">After</span></figcaption>
+      </figure>
+      <figure class="hook-pair">
+        <img loading="lazy" src="/assets/cases/IMG_6950.jpg" alt="Before clear aligner treatment — crowded teeth">
+        <img loading="lazy" src="/assets/cases/IMG_6951.jpg" alt="After clear aligner treatment — aligned smile">
+        <figcaption><span>Before</span><span class="af">After</span></figcaption>
+      </figure>
+    </div>
+    <p class="hook-note">Real cases treated with clear aligners. <a href="#results">See more results ↓</a></p>
+  </section>
+
   <section class="wrap" style="padding-top:0" id="book">
     <div class="capture" id="alcapture">
       <span class="eyebrow">Free consultation</span>
@@ -654,6 +689,70 @@ h1,h2{letter-spacing:-.018em}
       <div class="capok" id="bkok">Thank you — your consultation request is in. We'll email you to confirm your 5:30pm slot. Please keep an eye on your inbox.</div>
       <div class="capnote">Free &middot; 15 minutes &middot; no obligation</div>
     </div>
+  </section>
+
+  <section class="wrap" id="results">
+    <span class="eyebrow">Results</span>
+    <h2 class="lower">Real cases. Real movement.</h2>
+    <p class="lead" style="margin-top:16px;max-width:52ch">A selection of before-and-after cases treated with clear aligners. Individual results and treatment times vary — suitability is always confirmed at your consultation.</p>
+    <div class="cases">
+      <div class="case">
+        <div class="case-imgs">
+          <figure class="before"><figcaption>Before</figcaption><img loading="lazy" src="/assets/cases/IMG_6936.jpg" alt="Before clear aligner treatment — crowded, protruding upper front teeth"></figure>
+          <figure class="after"><figcaption>After</figcaption><img loading="lazy" src="/assets/cases/IMG_6937.jpg" alt="After clear aligner treatment — straightened, even upper front teeth"></figure>
+        </div>
+        <div class="case-meta"><span class="type">Crowding</span><span>Upper &amp; lower</span></div>
+      </div>
+
+      <div class="case">
+        <div class="case-imgs">
+          <figure class="before"><figcaption>Before</figcaption><img loading="lazy" src="/assets/cases/IMG_6940.jpg" alt="Before clear aligner treatment — spacing and gaps between teeth"></figure>
+          <figure class="after"><figcaption>After</figcaption><img loading="lazy" src="/assets/cases/IMG_6941.jpg" alt="After clear aligner treatment — gaps closed, aligned bite"></figure>
+        </div>
+        <div class="case-meta"><span class="type">Spacing &amp; gaps</span><span>Full arch</span></div>
+      </div>
+
+      <div class="case">
+        <div class="case-imgs">
+          <figure class="before"><figcaption>Before</figcaption><img loading="lazy" src="/assets/cases/IMG_6938.jpg" alt="Before clear aligner treatment — crowded lower teeth"></figure>
+          <figure class="after"><figcaption>After</figcaption><img loading="lazy" src="/assets/cases/IMG_6939.jpg" alt="After clear aligner treatment — aligned lower teeth"></figure>
+        </div>
+        <div class="case-meta"><span class="type">Crowding</span><span>Lower arch</span></div>
+      </div>
+
+      <div class="case">
+        <div class="case-imgs">
+          <figure class="before"><figcaption>Before</figcaption><img loading="lazy" src="/assets/cases/IMG_6950.jpg" alt="Before clear aligner treatment — crowded, uneven front teeth"></figure>
+          <figure class="after"><figcaption>After</figcaption><img loading="lazy" src="/assets/cases/IMG_6951.jpg" alt="After clear aligner treatment — even, aligned smile"></figure>
+        </div>
+        <div class="case-meta"><span class="type">Crowding &amp; alignment</span><span>Upper &amp; lower</span></div>
+      </div>
+
+      <div class="case">
+        <div class="case-imgs">
+          <figure class="before"><figcaption>Before</figcaption><img loading="lazy" src="/assets/cases/IMG_6946.jpg" alt="Before clear aligner treatment — misaligned front teeth"></figure>
+          <figure class="after"><figcaption>After</figcaption><img loading="lazy" src="/assets/cases/IMG_6947.jpg" alt="After clear aligner treatment — straightened front teeth"></figure>
+        </div>
+        <div class="case-meta"><span class="type">Alignment</span><span>Upper arch</span></div>
+      </div>
+
+      <div class="case">
+        <div class="case-imgs">
+          <figure class="before"><figcaption>Before</figcaption><img loading="lazy" src="/assets/cases/IMG_6942.jpg" alt="Before clear aligner treatment — uneven tooth edges"></figure>
+          <figure class="after"><figcaption>After</figcaption><img loading="lazy" src="/assets/cases/IMG_6943.jpg" alt="After clear aligner treatment — even, level smile"></figure>
+        </div>
+        <div class="case-meta"><span class="type">Alignment &amp; levelling</span><span>Upper arch</span></div>
+      </div>
+
+      <div class="case">
+        <div class="case-imgs">
+          <figure class="before"><figcaption>Before</figcaption><img loading="lazy" src="/assets/cases/IMG_6944.jpg" alt="Before clear aligner treatment — mild crowding"></figure>
+          <figure class="after"><figcaption>After</figcaption><img loading="lazy" src="/assets/cases/IMG_6945.jpg" alt="After clear aligner treatment — aligned teeth"></figure>
+        </div>
+        <div class="case-meta"><span class="type">Mild crowding</span><span>Full arch</span></div>
+      </div>
+    </div>
+    <p class="capnote" style="margin-top:18px">Cases shown are real treatment outcomes. Results, treatment times and suitability vary by individual and are confirmed by your orthodontist at consultation.</p>
   </section>
 
   <section class="wrap">
