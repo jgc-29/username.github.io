@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout — Un-clench.</title>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="assets/brand.css">
+<style>.announce{background:var(--coral);color:#fff;text-align:center;font-family:'Archivo',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;padding:11px 16px}</style>
+<style>
+  body{background:var(--bone-2)}
+  .co-top{background:var(--clench);padding:20px 32px}
+  .co-top-inner{max-width:var(--maxw);margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+  .co-top .brand-mark{color:var(--bone)}
+  .co-top a{font-family:'Archivo',sans-serif;font-size:14px;color:var(--sage-soft)}
+
+  .co-wrap{max-width:1000px;margin:0 auto;padding:48px 32px 90px;display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:start}
+
+  .co-form h1{font-family:'Archivo Expanded',sans-serif;font-weight:800;font-size:32px;letter-spacing:-0.02em;margin-bottom:8px}
+  .co-form .co-sub{font-size:15px;color:var(--slate);margin-bottom:32px}
+  .field-group{margin-bottom:28px}
+  .field-group h3{font-family:'Archivo',sans-serif;font-weight:600;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--paper-dim);margin-bottom:16px}
+  .field{margin-bottom:14px}
+  .field label{display:block;font-size:13px;font-weight:500;color:var(--slate);margin-bottom:6px}
+  .field input{width:100%;padding:14px 16px;border:1px solid var(--line);border-radius:8px;font-family:'Inter',sans-serif;font-size:15px;background:var(--bone);color:var(--ink)}
+  .field input:focus{outline:none;border-color:var(--coral)}
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+
+  .co-summary{background:var(--clench);color:var(--bone);border-radius:var(--radius);padding:32px 30px;position:sticky;top:32px}
+  .co-summary h2{font-family:'Archivo Expanded',sans-serif;font-weight:700;font-size:19px;margin-bottom:22px;letter-spacing:-0.01em}
+  .sum-line{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--line-dark)}
+  .sum-thumb{width:48px;height:48px;border-radius:7px;background:var(--clench-2);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:'Archivo Expanded',sans-serif;font-weight:700;font-size:9px;text-align:center;padding:4px;color:var(--sage-soft)}
+  .sum-info{flex:1;min-width:0}
+  .sum-name{font-family:'Archivo',sans-serif;font-weight:600;font-size:14px;color:var(--bone)}
+  .sum-variant{font-size:12px;color:var(--paper-dim);margin-top:2px}
+  .sum-price{font-family:'Archivo',sans-serif;font-weight:700;font-size:14px;color:var(--bone)}
+  .sum-totals{margin-top:20px;padding-top:18px}
+  .sum-row{display:flex;justify-content:space-between;font-size:14px;color:rgba(240,235,226,0.7);margin-bottom:10px}
+  .sum-row.total{font-family:'Archivo',sans-serif;font-weight:700;font-size:20px;color:var(--bone);margin-top:14px;padding-top:16px;border-top:1px solid var(--line-dark)}
+  .pay-note{margin-top:20px;font-size:12px;color:var(--paper-dim);line-height:1.5;text-align:center}
+  .demo-banner{background:var(--coral);color:var(--clench);padding:14px 18px;border-radius:8px;font-size:13px;line-height:1.5;margin-bottom:24px;font-weight:500}
+
+  @media(max-width:820px){.co-wrap{grid-template-columns:1fr}.co-summary{position:static;order:-1}}
+</style>
+</head>
+<body>
+
+<div class="co-top">
+  <div class="co-top-inner">
+    <a href="index.html" class="brand-mark">un-clench<span class="dot">.</span></a>
+    <a href="store.html">← Back to shop</a>
+  </div>
+</div>
+
+<div class="co-wrap">
+  <div class="co-form">
+    <h1>Checkout</h1>
+    <p class="co-sub">Almost there. A dentist reviews every order before anything is made.</p>
+
+    <div class="demo-banner">This is a demo checkout — no payment is taken. See the go-live checklist to connect Stripe and start taking real orders.</div>
+
+    <div class="field-group">
+      <h3>Contact</h3>
+      <div class="field"><label>Email</label><input type="email" placeholder="you@email.com"></div>
+    </div>
+
+    <div class="field-group">
+      <h3>Shipping address</h3>
+      <div class="field-row">
+        <div class="field"><label>First name</label><input type="text"></div>
+        <div class="field"><label>Last name</label><input type="text"></div>
+      </div>
+      <div class="field"><label>Address</label><input type="text"></div>
+      <div class="field-row">
+        <div class="field"><label>City</label><input type="text"></div>
+        <div class="field"><label>Postcode</label><input type="text"></div>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <h3>Payment</h3>
+      <div class="field"><label>Card details</label><input type="text" placeholder="Card entry appears here once Stripe is connected" disabled style="opacity:.6"></div>
+    </div>
+
+    <button class="btn btn-coral btn-lg btn-full" onclick="alert('Demo only — connect Stripe to take real payment. See the go-live checklist.')">Pay <span id="payTotal">£0</span> →</button>
+  </div>
+
+  <aside class="co-summary">
+    <h2>Your order</h2>
+    <div id="sumLines"></div>
+    <div class="sum-totals">
+      <div class="sum-row"><span>Subtotal</span><span id="subtotal">£0</span></div>
+      <div class="sum-row"><span>Shipping</span><span>Free</span></div>
+      <div class="sum-row total"><span>Total</span><span id="grandtotal">£0</span></div>
+    </div>
+    <p class="pay-note">Secure checkout. Custom devices are made to order and dentist-reviewed before fabrication.</p>
+  </aside>
+</div>
+
+<script src="assets/store.js"></script>
+<script>
+  // read cart from URL (demo handoff from cart drawer)
+  const params = new URLSearchParams(location.search);
+  let lines = [];
+  try { lines = JSON.parse(decodeURIComponent(params.get('cart')||'[]')); } catch(e){}
+
+  const sumLines = document.getElementById('sumLines');
+  let total = 0;
+  if(lines.length === 0){
+    sumLines.innerHTML = '<p style="color:var(--paper-dim);font-size:14px;padding:20px 0">Your cart is empty. <a href="store.html" style="color:var(--coral)">Return to shop →</a></p>';
+  } else {
+    sumLines.innerHTML = lines.map(l=>{
+      const p = CATALOGUE[l.id];
+      const lineTotal = p.price * l.qty;
+      total += lineTotal;
+      return `<div class="sum-line">
+        <div class="sum-thumb">${p.thumb}</div>
+        <div class="sum-info">
+          <div class="sum-name">${p.name} ${l.qty>1?'× '+l.qty:''}</div>
+          <div class="sum-variant">${l.variant||(p.sub?'Subscription':'One-time')}</div>
+        </div>
+        <div class="sum-price">£${lineTotal}</div>
+      </div>`;
+    }).join('');
+  }
+  document.getElementById('subtotal').textContent = '£'+total;
+  document.getElementById('grandtotal').textContent = '£'+total;
+  document.getElementById('payTotal').textContent = '£'+total;
+</script>
+</body>
+</html>

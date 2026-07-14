@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank you — Your order is confirmed | Un-clench</title>
+<meta name="description" content="Your un-clench order is confirmed. Here's what happens next.">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="assets/brand.css">
+
+<!-- =================================================================
+     CONVERSION TRACKING
+     Replace the placeholder IDs below with your real ones, then this
+     page fires a purchase/conversion event the moment it loads.
+     ================================================================= -->
+
+<!-- Google Analytics 4 (replace G-XXXXXXXXXX) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
+<style>
+  body{background:var(--clench);color:var(--bone)}
+  .ty{max-width:680px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:60px 32px;text-align:center}
+  .ty-brand{font-family:'Archivo Expanded',sans-serif;font-weight:800;font-size:22px;letter-spacing:-0.02em;margin-bottom:56px}
+  .ty-brand .dot{color:var(--coral)}
+  .ty-check{width:64px;height:64px;border-radius:50%;background:var(--coral);color:#fff;display:flex;align-items:center;justify-content:center;font-size:32px;margin:0 auto 32px}
+  .ty h1{font-family:'Archivo Expanded',sans-serif;font-weight:800;font-size:clamp(30px,5vw,48px);letter-spacing:-0.03em;line-height:1;margin-bottom:20px}
+  .ty-lede{font-family:'Newsreader',serif;font-style:italic;font-size:clamp(18px,2.2vw,22px);color:rgba(240,235,226,0.8);line-height:1.4;margin-bottom:52px}
+  .ty-steps{text-align:left;background:var(--clench-2);border:1px solid var(--line-dark);border-radius:8px;padding:8px 32px;margin-bottom:44px}
+  .ty-step{display:grid;grid-template-columns:44px 1fr;gap:20px;padding:24px 0;border-bottom:1px solid var(--line-dark);align-items:baseline}
+  .ty-step:last-child{border-bottom:none}
+  .ty-step .n{font-family:'Newsreader',serif;font-style:italic;font-size:20px;color:var(--coral)}
+  .ty-step h3{font-family:'Archivo',sans-serif;font-weight:700;font-size:16px;margin-bottom:5px}
+  .ty-step p{font-size:14px;color:rgba(240,235,226,0.65);line-height:1.6}
+  .ty-note{font-size:13.5px;color:rgba(240,235,226,0.5);line-height:1.7;margin-bottom:40px;max-width:520px;margin-left:auto;margin-right:auto}
+  .ty-note strong{color:var(--bone)}
+  .ty-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+</style>
+</head>
+<body>
+  <div class="ty">
+    <div class="ty-brand">un-clench<span class="dot">.</span></div>
+    <div class="ty-check">✓</div>
+    <h1>Order confirmed.</h1>
+    <p class="ty-lede">Thank you — your order's in, and your relief is on its way.</p>
+
+    <div class="ty-steps">
+      <div class="ty-step">
+        <span class="n">01</span>
+        <div><h3>Check your inbox</h3><p>A confirmation email is on its way with your receipt and order details. If your order includes a custom plate, your impression kit ships within one working day.</p></div>
+      </div>
+      <div class="ty-step">
+        <span class="n">02</span>
+        <div><h3>Take your impressions</h3><p>For plate orders, follow the simple instructions in your kit and post it back in the prepaid envelope — or upload an existing scan if you have one.</p></div>
+      </div>
+      <div class="ty-step">
+        <span class="n">03</span>
+        <div><h3>A dentist reviews your case</h3><p>A GDC-registered dentist checks your case before anything is fabricated. We'll email you when it's approved and in production.</p></div>
+      </div>
+      <div class="ty-step">
+        <span class="n">04</span>
+        <div><h3>Made in the UK, posted to you</h3><p>Your order is fabricated in a UK dental lab and arrives within 10–14 days. Then: unclench.</p></div>
+      </div>
+    </div>
+
+    <p class="ty-note">Questions about your order? Email <strong>hello@un-clench.com</strong> and we'll help. While you wait, start the free <strong>21-day unclench programme</strong> — the habit-retraining course, straight to your inbox.</p>
+
+    <div class="ty-actions">
+      <a href="learn.html" class="btn btn-coral btn-lg">Read the guides</a>
+      <a href="index.html" class="btn btn-ghost btn-lg">Back to home</a>
+    </div>
+  </div>
+</body>
+</html>

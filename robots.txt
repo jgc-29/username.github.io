@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://getbiodental.co.uk/sitemap.xml
+Disallow: /checkout.html
+Sitemap: https://un-clench.com/sitemap.xml

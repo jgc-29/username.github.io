@@ -1,0 +1,146 @@
+/* ============================================================
+   UNCLENCH — shared brand stylesheet
+   Palette, type and components used across every page.
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Archivo+Expanded:wght@600;700;800&family=Inter:wght@400;500;600&family=Newsreader:ital,opsz@0,6..72;1,6..72&display=swap');
+
+:root{
+  --clench:#1E1B3A;
+  --clench-2:#2B2752;
+  --bone:#F0EBE2;
+  --bone-2:#E6DFD2;
+  --coral:#FF6B5C;
+  --coral-deep:#E8503F;
+  --sage:#8B9D83;
+  --sage-soft:#B4C0AC;
+  --slate:#5C5A72;
+  --ink:#181528;
+  --paper-dim:#8A8598;
+  --line:rgba(30,27,58,0.14);
+  --line-dark:rgba(240,235,226,0.16);
+  --maxw:1120px;
+  --radius:6px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bone);
+  color:var(--ink);
+  -webkit-font-smoothing:antialiased;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+::selection{background:var(--coral);color:#fff}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+/* ---------- type helpers ---------- */
+.display{font-family:'Archivo Expanded','Archivo',sans-serif;font-weight:800;letter-spacing:-0.025em;line-height:0.95}
+.grotesk{font-family:'Archivo',sans-serif}
+.serif-it{font-family:'Newsreader',serif;font-style:italic}
+.eyebrow{font-family:'Archivo',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:0.28em;font-size:11px;color:var(--coral)}
+.eyebrow.sage{color:var(--sage)}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px}
+.dot{color:var(--coral)}
+
+/* ============================================================
+   NAV — slim, editorial
+   ============================================================ */
+.nav{position:sticky;top:0;z-index:100;background:rgba(240,235,226,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav.on-dark{background:rgba(30,27,58,0.88);border-bottom:1px solid var(--line-dark)}
+.nav-inner{max-width:1240px;margin:0 auto;padding:0 40px;height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand-mark{font-family:'Archivo Expanded',sans-serif;font-weight:800;font-size:19px;letter-spacing:-0.02em;color:var(--clench)}
+.nav.on-dark .brand-mark{color:var(--bone)}
+.nav-links{display:flex;gap:36px;align-items:center;position:absolute;left:50%;transform:translateX(-50%)}
+.nav-inner{position:relative}
+.nav-links a{font-family:'Archivo',sans-serif;font-weight:600;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--slate);transition:color .2s}
+.nav.on-dark .nav-links a{color:var(--sage-soft)}
+.nav-links a:hover{color:var(--coral)}
+.nav-right{display:flex;align-items:center;gap:26px}
+.cart-btn{position:relative;font-family:'Archivo',sans-serif;font-weight:600;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--clench);cursor:pointer;display:flex;align-items:center;gap:8px;background:none;border:none}
+.nav.on-dark .cart-btn{color:var(--bone)}
+.cart-count{background:var(--coral);color:#fff;font-size:10px;font-weight:700;min-width:17px;height:17px;border-radius:100px;display:inline-flex;align-items:center;justify-content:center;padding:0 5px;letter-spacing:0}
+.nav-cta{font-family:'Archivo',sans-serif;font-weight:600;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--clench)!important;border-bottom:1px solid var(--coral);padding-bottom:2px;transition:color .2s}
+.nav.on-dark .nav-cta{color:var(--bone)!important}
+.nav-cta:hover{color:var(--coral)!important}
+.nav-toggle{display:none;background:none;border:none;color:inherit;font-size:22px;cursor:pointer}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:'Archivo',sans-serif;font-weight:600;font-size:13px;letter-spacing:0.12em;text-transform:uppercase;padding:17px 34px;border-radius:2px;cursor:pointer;border:none;transition:all .25s ease}
+.btn-coral{background:var(--coral);color:#fff}
+.btn-coral:hover{background:var(--coral-deep)}
+.btn-ghost{background:transparent;color:var(--bone);border:1px solid rgba(240,235,226,0.35)}
+.btn-ghost:hover{border-color:var(--bone)}
+.btn-ink{background:var(--clench);color:var(--bone)}
+.btn-ink:hover{background:var(--clench-2)}
+.btn-outline{background:transparent;color:var(--clench);border:1px solid var(--clench)}
+.btn-outline:hover{background:var(--clench);color:var(--bone)}
+.btn-lg{padding:19px 42px;font-size:13px}
+.btn-full{width:100%}
+
+/* ---------- footer ---------- */
+.footer{background:var(--clench);color:var(--bone);padding:100px 40px 44px}
+.footer-inner{max-width:1240px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:2.4fr 1fr 1fr 1fr;gap:48px;padding-bottom:70px;border-bottom:1px solid var(--line-dark)}
+.footer-brand .fb-mark{font-family:'Archivo Expanded',sans-serif;font-weight:800;font-size:26px;letter-spacing:-0.02em;color:var(--bone);margin-bottom:16px}
+.footer-brand p{font-size:14px;color:rgba(240,235,226,0.55);max-width:300px;line-height:1.7}
+.footer-col h5{font-family:'Archivo',sans-serif;font-weight:600;font-size:10.5px;letter-spacing:0.24em;text-transform:uppercase;color:var(--coral);margin-bottom:22px}
+.footer-col a{display:block;font-size:14px;color:rgba(240,235,226,0.7);margin-bottom:13px;transition:color .2s}
+.footer-col a:hover{color:var(--bone)}
+.footer-bottom{padding-top:32px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-family:'Archivo',sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(240,235,226,0.35)}
+.footer-legal{max-width:680px;font-size:11.5px;color:rgba(240,235,226,0.35);line-height:1.7;margin-top:26px}
+
+/* ============================================================
+   CART DRAWER (shared, injected on every page)
+   ============================================================ */
+.cart-overlay{position:fixed;inset:0;background:rgba(24,21,40,0.5);opacity:0;visibility:hidden;transition:.3s;z-index:200}
+.cart-overlay.open{opacity:1;visibility:visible}
+.cart-drawer{position:fixed;top:0;right:0;height:100%;width:min(420px,100%);background:var(--bone);z-index:201;transform:translateX(100%);transition:transform .35s cubic-bezier(.3,.8,.3,1);display:flex;flex-direction:column;box-shadow:-20px 0 60px rgba(24,21,40,0.2)}
+.cart-drawer.open{transform:translateX(0)}
+.cart-head{padding:26px 28px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+.cart-head h3{font-family:'Archivo Expanded',sans-serif;font-weight:700;font-size:20px;letter-spacing:-0.01em}
+.cart-close{background:none;border:none;font-size:24px;cursor:pointer;color:var(--slate);line-height:1}
+.cart-items{flex:1;overflow-y:auto;padding:20px 28px}
+.cart-empty{text-align:center;padding:60px 20px;color:var(--paper-dim)}
+.cart-empty .ce-word{font-family:'Archivo Expanded',sans-serif;font-weight:700;font-size:22px;color:var(--slate);margin-bottom:8px}
+.ci{display:flex;gap:14px;padding:18px 0;border-bottom:1px solid var(--line)}
+.ci-thumb{width:64px;height:64px;border-radius:6px;background:var(--clench);flex-shrink:0;display:flex;align-items:center;justify-content:center;color:var(--bone);font-family:'Archivo Expanded',sans-serif;font-weight:700;font-size:11px;text-align:center;padding:6px}
+.ci-thumb.coral{background:var(--coral);color:var(--clench)}
+.ci-thumb.sage{background:var(--sage);color:var(--clench)}
+.ci-body{flex:1;min-width:0}
+.ci-name{font-family:'Archivo',sans-serif;font-weight:600;font-size:15px;margin-bottom:3px}
+.ci-variant{font-size:12.5px;color:var(--paper-dim);margin-bottom:8px}
+.ci-controls{display:flex;align-items:center;gap:10px}
+.qty{display:flex;align-items:center;border:1px solid var(--line);border-radius:100px;overflow:hidden}
+.qty button{background:none;border:none;width:26px;height:26px;cursor:pointer;color:var(--slate);font-size:15px}
+.qty span{font-size:13px;font-weight:600;min-width:20px;text-align:center}
+.ci-remove{font-size:12px;color:var(--paper-dim);cursor:pointer;background:none;border:none;text-decoration:underline}
+.ci-price{font-family:'Archivo',sans-serif;font-weight:700;font-size:15px;color:var(--clench)}
+.cart-foot{padding:24px 28px;border-top:1px solid var(--line);background:var(--bone-2)}
+.cart-subtotal{display:flex;justify-content:space-between;font-family:'Archivo',sans-serif;font-weight:700;font-size:17px;margin-bottom:6px}
+.cart-note{font-size:12px;color:var(--paper-dim);margin-bottom:18px}
+
+/* ---------- reveal on scroll ---------- */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- generic section header ---------- */
+.sec-head2{margin-bottom:48px}
+.sec-head2 .eyebrow{display:block;margin-bottom:16px}
+.sec-head2 h2{font-family:'Archivo Expanded',sans-serif;font-weight:800;font-size:clamp(30px,4.4vw,50px);letter-spacing:-0.025em;line-height:1;color:var(--ink)}
+.sec-head2.on-dark h2{color:var(--bone)}
+.sec-head2 p{margin-top:18px;font-size:16.5px;color:var(--slate);max-width:560px;line-height:1.6}
+.sec-head2.on-dark p{color:rgba(240,235,226,0.7)}
+
+@media(max-width:860px){
+  .nav-links{display:none}
+  .footer-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:560px){
+  .footer-top{grid-template-columns:1fr}
+  .wrap{padding:0 22px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
