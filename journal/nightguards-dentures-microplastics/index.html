@@ -535,6 +535,8 @@ h1,h2{letter-spacing:-.018em}
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'AW-18314171866');
+  // GA4 journeys — create property at analytics.google.com, then uncomment with your real ID:
+  // gtag('config', 'G-XXXXXXXX');
 </script>
 <!--
   ANALYTICS & PIXELS — paste your IDs to activate.
@@ -581,6 +583,7 @@ h1,h2{letter-spacing:-.018em}
     <h1 class="lower">Nightguards, dentures, mouthguards: <em>the plastics nobody talks about.</em></h1>
     <p class="lead" style="margin-top:20px">Retainers and aligners get the attention, but they have quieter siblings: the nightguard ground between clenched teeth for eight hours, the denture worn through every meal for decades, the sports mouthguard bitten through every match. All plastic. Almost none of it discussed.</p>
   </section>
+    <section class="wrap" style="padding-top:0"><figure style="margin:0 auto;max-width:860px;border:1px solid rgba(26,25,21,.14);border-radius:5px;overflow:hidden"><img loading="lazy" style="display:block;width:100%;height:auto" src="/assets/article-nightguards.jpg" alt="A clear dental guard in an open ceramic case on a lamp-lit bedside table"></figure></section>
   <section class="wrap"><div class="article">
     <h2 class="lower">The nightguard: wear by design</h2>
     <p>A nightguard exists to be worn down — it takes the grinding force so your enamel doesn't. Most are made from the same thermoplastic families as retainers (EVA, PET-G, acrylics), and the mechanism that protects your teeth — sacrificial abrasion — is precisely the mechanism that generates particles. If you grind hard enough to flatten a guard in a year, that material went somewhere, and much of it was swallowed. Research specific to nightguard particle release is thin, which is itself the point: a device designed to abrade in the mouth, nightly, for years, has barely been studied for what its abrasion produces.</p>
@@ -956,6 +959,25 @@ h1,h2{letter-spacing:-.018em}
 
   imgs.forEach(function(el){ io.observe(el); });
   vids.forEach(function(el){ io.observe(el); });
+})();
+</script>
+<script id="bio-journey">
+(function(){
+  function evt(n,p){try{if(window.gtag)gtag('event',n,p||{})}catch(_){}}
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('a'); if(!a) return;
+    var h=a.getAttribute('href')||''; var t=(a.textContent||'').replace(/\s+/g,' ').trim().slice(0,60);
+    if(h.indexOf('buy.stripe.com')>-1){ evt('stripe_checkout_click',{link_text:t,page_path:location.pathname}); return; }
+    if(a.classList.contains('btn')||(a.closest&&(a.closest('.hero-cta')||a.closest('header nav')))||a.classList.contains('jcard')){
+      evt('cta_click',{cta_text:t,link_url:h,page_path:location.pathname});
+    }
+  },true);
+  document.addEventListener('change',function(e){
+    var el=e.target; if(!el||!el.name) return;
+    if(el.type==='radio'||el.type==='checkbox'||el.tagName==='SELECT'){
+      evt('option_selected',{option:el.name,value:(el.type==='checkbox'?(el.checked?'on':'off'):el.value),page_path:location.pathname});
+    }
+  },true);
 })();
 </script>
 </body>

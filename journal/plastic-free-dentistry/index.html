@@ -535,6 +535,8 @@ h1,h2{letter-spacing:-.018em}
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'AW-18314171866');
+  // GA4 journeys — create property at analytics.google.com, then uncomment with your real ID:
+  // gtag('config', 'G-XXXXXXXX');
 </script>
 <!--
   ANALYTICS & PIXELS — paste your IDs to activate.
@@ -582,6 +584,7 @@ h1,h2{letter-spacing:-.018em}
     <p class="lead" style="margin-top:20px">Almost everything dentistry puts in your mouth is plastic — the brush, the floss, the aligner, the retainer. Here's what "plastic-free" genuinely means for each, what the research says about wear and shedding, and where the honest limits are.</p>
   </section>
 
+  <section class="wrap" style="padding-top:0"><figure style="margin:0 auto;max-width:860px;border:1px solid rgba(26,25,21,.14);border-radius:5px;overflow:hidden"><img loading="lazy" style="display:block;width:100%;height:auto" src="/assets/article-pillar.jpg" alt="Plastic-free dental flat-lay: bamboo toothbrush, tooth tablets in a glass jar, plant-fibre floss and a clear retainer on linen"></figure></section>
   <section class="wrap"><div class="article">
     <h2 class="lower">Start with an uncomfortable fact</h2>
     <p>Your toothbrush has plastic bristles on a plastic handle. Your floss is a plastic thread in a plastic box. Toothpaste comes in a layered plastic tube — and often contained plastic microbeads until they were banned in rinse-off products. If you wear a retainer or clear aligner, that's a sheet of thermoplastic or polyurethane held against your teeth for hours every day. Dentistry runs on plastic, and until recently almost nobody asked what that means for the body wearing it.</p>
@@ -965,6 +968,25 @@ h1,h2{letter-spacing:-.018em}
 
   imgs.forEach(function(el){ io.observe(el); });
   vids.forEach(function(el){ io.observe(el); });
+})();
+</script>
+<script id="bio-journey">
+(function(){
+  function evt(n,p){try{if(window.gtag)gtag('event',n,p||{})}catch(_){}}
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('a'); if(!a) return;
+    var h=a.getAttribute('href')||''; var t=(a.textContent||'').replace(/\s+/g,' ').trim().slice(0,60);
+    if(h.indexOf('buy.stripe.com')>-1){ evt('stripe_checkout_click',{link_text:t,page_path:location.pathname}); return; }
+    if(a.classList.contains('btn')||(a.closest&&(a.closest('.hero-cta')||a.closest('header nav')))||a.classList.contains('jcard')){
+      evt('cta_click',{cta_text:t,link_url:h,page_path:location.pathname});
+    }
+  },true);
+  document.addEventListener('change',function(e){
+    var el=e.target; if(!el||!el.name) return;
+    if(el.type==='radio'||el.type==='checkbox'||el.tagName==='SELECT'){
+      evt('option_selected',{option:el.name,value:(el.type==='checkbox'?(el.checked?'on':'off'):el.value),page_path:location.pathname});
+    }
+  },true);
 })();
 </script>
 </body>

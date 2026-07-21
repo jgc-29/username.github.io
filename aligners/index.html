@@ -535,6 +535,8 @@ h1,h2{letter-spacing:-.018em}
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'AW-18314171866');
+  // GA4 journeys — create property at analytics.google.com, then uncomment with your real ID:
+  // gtag('config', 'G-XXXXXXXX');
 </script>
 <!--
   ANALYTICS & PIXELS — paste your IDs to activate.
@@ -634,6 +636,7 @@ h1,h2{letter-spacing:-.018em}
       <a href="/standard/" class="btn ghost lg">See the test results →</a>
     </div>
     <p class="capnote" style="margin-top:16px">Indicative pricing. Final cost confirmed at your free consultation, based on your treatment plan.</p>
+    <figure style="margin:40px auto 0;max-width:100%;border:1px solid rgba(26,25,21,.14);border-radius:5px;overflow:hidden"><img loading="eager" style="display:block;width:100%;height:auto" src="/assets/hero-aligners.jpg" alt="A sequence of three clear bio.aligners on warm linen in afternoon light"></figure>
   </section>
 
   <section class="wrap" style="padding-top:0">
@@ -1253,6 +1256,7 @@ function bookingPick(btn){
   bkChosen=btn.getAttribute('data-slot');
   document.getElementById('bkstep1').style.display='none';
   document.getElementById('bkchosen').innerHTML='Selected: <strong>'+bkChosen+'</strong>';
+  try{ if(window.gtag) gtag('event','booking_slot_selected',{slot:bkChosen}); }catch(_){}
   document.getElementById('bkform').style.display='grid';
 }
 function bookingBack(){
@@ -1307,6 +1311,25 @@ function bookingSubmit(e){
   window.location.href = '/aligners/confirmed/'+q;
   return false;
 }
+</script>
+<script id="bio-journey">
+(function(){
+  function evt(n,p){try{if(window.gtag)gtag('event',n,p||{})}catch(_){}}
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('a'); if(!a) return;
+    var h=a.getAttribute('href')||''; var t=(a.textContent||'').replace(/\s+/g,' ').trim().slice(0,60);
+    if(h.indexOf('buy.stripe.com')>-1){ evt('stripe_checkout_click',{link_text:t,page_path:location.pathname}); return; }
+    if(a.classList.contains('btn')||(a.closest&&(a.closest('.hero-cta')||a.closest('header nav')))||a.classList.contains('jcard')){
+      evt('cta_click',{cta_text:t,link_url:h,page_path:location.pathname});
+    }
+  },true);
+  document.addEventListener('change',function(e){
+    var el=e.target; if(!el||!el.name) return;
+    if(el.type==='radio'||el.type==='checkbox'||el.tagName==='SELECT'){
+      evt('option_selected',{option:el.name,value:(el.type==='checkbox'?(el.checked?'on':'off'):el.value),page_path:location.pathname});
+    }
+  },true);
+})();
 </script>
 </body>
 </html>
