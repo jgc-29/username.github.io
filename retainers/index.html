@@ -557,6 +557,12 @@ h1,h2{letter-spacing:-.018em}
 
   Once live, the email-capture handler already fires fbq('Lead') and gtag('generate_lead').
 -->
+<style>
+#stickybuy{position:fixed;left:0;right:0;bottom:0;z-index:90;display:none;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;background:var(--bone);border-top:1px solid var(--line);box-shadow:0 -4px 18px rgba(26,25,21,.06)}
+#stickybuy .t{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--ink-soft)}
+#stickybuy .btn{padding:11px 20px;font-size:14px}
+@media(min-width:761px){#stickybuy{display:none !important}}
+</style>
 </head>
 <body>
 <header>
@@ -625,6 +631,28 @@ h1,h2{letter-spacing:-.018em}
   </section>
 
   <section class="wrap">
+    <span class="eyebrow">The nightly ritual</span>
+    <h2 class="lower">Worn while you sleep. Nothing more asked.</h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:36px" class="two">
+      <div><div style="font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--oxide);margin-bottom:10px">/ 01 — Rinse</div><p style="color:var(--ink-soft);line-height:1.65">Cool water, before and after. Never hot — heat is what warps and degrades a retainer, ours included.</p></div>
+      <div><div style="font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--oxide);margin-bottom:10px">/ 02 — Wear</div><p style="color:var(--ink-soft);line-height:1.65">Through the night, every night. Teeth drift for decades after braces; the retainer is what holds the line.</p></div>
+      <div><div style="font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--oxide);margin-bottom:10px">/ 03 — Rest</div><p style="color:var(--ink-soft);line-height:1.65">Dry, in its case, out of the sun. A year of nights is what it is built for — then it is replaced, fresh and tested.</p></div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <span class="eyebrow">Composition</span>
+    <h2 class="lower">What you are actually wearing.</h2>
+    <div style="margin-top:28px;border:1px solid var(--line);border-radius:5px;overflow:hidden;max-width:720px">
+      <div style="display:grid;grid-template-columns:1fr 1.6fr;border-bottom:1px solid var(--line);font-size:14.5px"><div style="padding:14px 18px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)">Material</div><div style="padding:14px 18px">Bio-derived polymer — not petroleum-based plastic</div></div>
+      <div style="display:grid;grid-template-columns:1fr 1.6fr;border-bottom:1px solid var(--line);font-size:14.5px"><div style="padding:14px 18px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)">Tested for</div><div style="padding:14px 18px">Microplastic release · BPA &amp; BPA-derivative release · phthalates</div></div>
+      <div style="display:grid;grid-template-columns:1fr 1.6fr;border-bottom:1px solid var(--line);font-size:14.5px"><div style="padding:14px 18px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)">Tested by</div><div style="padding:14px 18px">Independent ISO 17025-accredited laboratory, per production lot</div></div>
+      <div style="display:grid;grid-template-columns:1fr 1.6fr;border-bottom:1px solid var(--line);font-size:14.5px"><div style="padding:14px 18px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)">Results</div><div style="padding:14px 18px">Published in full at <a href="/standard/">the bio. Standard</a></div></div>
+      <div style="display:grid;grid-template-columns:1fr 1.6fr;font-size:14.5px"><div style="padding:14px 18px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)">Care</div><div style="padding:14px 18px">Cool water and a soft brush. No heat, no harsh cleaners, no direct sun.</div></div>
+    </div>
+  </section>
+
+  <section class="wrap">
     <span class="eyebrow">How to order</span>
     <h2 class="lower">Choose your impression method.</h2>
     <div class="methods">
@@ -657,6 +685,15 @@ h1,h2{letter-spacing:-.018em}
       </div>
     </div>
     <p class="cite" style="margin-top:24px;text-align:center">Choose your arches and add an impression kit at the next step. Secure checkout with Stripe — card details are never stored by bio.</p>
+  </section>
+
+  <section class="wrap">
+    <span class="eyebrow">Before you order</span>
+    <div style="max-width:720px;margin-top:8px">
+      <details style="border-bottom:1px solid var(--line);padding:16px 0"><summary style="cursor:pointer;font-weight:500">How do home impressions work?</summary><p style="color:var(--ink-soft);margin-top:10px;line-height:1.65">Your kit arrives with putty, trays and clear step-by-step instructions. You take your impressions at home in a few minutes, post them back to us, and your retainers are made from your own moulds.</p></details>
+      <details style="border-bottom:1px solid var(--line);padding:16px 0"><summary style="cursor:pointer;font-weight:500">Upper, lower — or both?</summary><p style="color:var(--ink-soft);margin-top:10px;line-height:1.65">Whichever arch had braces is the one that needs holding. If both did, both. If you are unsure, email us a photo of your old retainer and we will tell you honestly.</p></details>
+      <details style="padding:16px 0"><summary style="cursor:pointer;font-weight:500">Why replace it yearly?</summary><p style="color:var(--ink-soft);margin-top:10px;line-height:1.65">Retainers wear — surfaces roughen, and older devices shed more. The subscription keeps you on the fresh end of the wear curve, with each replacement tested and published like the first. <a href="/journal/retainer-microplastics/">Read the research →</a></p></details>
+    </div>
   </section>
 
   <section class="ctaband"><div class="wrap"><span class="eyebrow">bio.retainers</span><h2 class="lower">Tested lot by lot. Published in full.</h2><p>From £100 per arch. From £140/year subscription. Delivered to your door.</p><a href="/retainers/#buy" class="btn lg">Order bio.retainers</a></div></section>
@@ -774,7 +811,7 @@ h1,h2{letter-spacing:-.018em}
     try{
       fetch('https://formsubmit.co/ajax/hello@getbiodental.co.uk',{
         method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
-        body:JSON.stringify({_subject:'bio. email signup',email:email,source:which,page:location.pathname})
+        body:JSON.stringify({_subject:'bio. email signup',_autoresponse:'Thanks for joining bio. Here is your 2-minute materials guide: https://getbiodental.co.uk/guide/ — what dental devices are made of, what wear releases, and the five questions worth asking. We will be in touch with early access and founding-customer offers. — bio., getbiodental.co.uk',email:email,source:which,page:location.pathname})
       });
     }catch(_){}
     try{ if(window.fbq) fbq('track','Lead'); }catch(_){}
@@ -1035,6 +1072,17 @@ h1,h2{letter-spacing:-.018em}
       evt('option_selected',{option:el.name,value:(el.type==='checkbox'?(el.checked?'on':'off'):el.value),page_path:location.pathname});
     }
   },true);
+})();
+</script>
+<div id="stickybuy"><span class="t">bio.retainers — from £100</span><a href="#buy" class="btn">Order →</a></div>
+<script>
+(function(){
+  var bar=document.getElementById('stickybuy'), buy=document.getElementById('buy');
+  if(!bar||!buy) return;
+  var buyVisible=false;
+  function update(){ bar.style.display=(window.scrollY>600&&!buyVisible)?'flex':'none'; }
+  try{ new IntersectionObserver(function(en){ buyVisible=en[0].isIntersecting; update(); },{threshold:0.05}).observe(buy); }catch(_){}
+  window.addEventListener('scroll',update,{passive:true});
 })();
 </script>
 </body>
