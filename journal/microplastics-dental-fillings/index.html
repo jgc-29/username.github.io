@@ -644,9 +644,9 @@ h1,h2{letter-spacing:-.018em}
   };
   var descs={
     home:'bio. retainers are the only UK retainers independently tested for microplastic and BPA-derivative release, with results published by lot. Plastic-free dental care, tested in the open.',
-    shop:'Order bio.retainers — plastic-free, ISO 17025-tested, results published by lot. From £100 per arch. Impression kit or digital scan.',
+    shop:'Order bio.retainers — plastic-free, ISO 17025-tested, results published by lot. From £110 per arch. Impression kit or digital scan.',
     order:'Choose your bio.retainers — upper, lower or both arches, single set or annual subscription, with or without an impression kit. Secure Stripe checkout.',
-    retainers:'The only UK retainer independently tested for microplastic release, with results published by lot. Bio-derived polymer, results published. From £100.',
+    retainers:'The only UK retainer independently tested for microplastic release, with results published by lot. Bio-derived polymer, results published. From £110.',
     standard:'The bio. Standard is our public material-testing protocol. Every product independently tested by an ISO 17025 lab, every result published by lot.',
     about:'Why we built bio. — the dental brand asking what your retainer is actually made of, and publishing the answer.',
     faq:'Answers on bio.retainers: what they are made of, how the impression kit works, testing, delivery and subscription.',
@@ -719,7 +719,7 @@ h1,h2{letter-spacing:-.018em}
     try{
       fetch('https://formsubmit.co/ajax/hello@getbiodental.co.uk',{
         method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
-        body:JSON.stringify({_subject:'bio. email signup',_autoresponse:'Thanks for joining bio. Here is your 2-minute materials guide: https://getbiodental.co.uk/guide/ — what dental devices are made of, what wear releases, and the five questions worth asking. We will be in touch with early access and founding-customer offers. — bio., getbiodental.co.uk',email:email,source:which,page:location.pathname})
+        body:JSON.stringify({_subject:'bio. email signup',_autoresponse:'Thanks for joining bio. Here is your 2-minute materials guide: https://getbiodental.co.uk/guide/ — what dental devices are made of, what wear releases, and the five questions worth asking. We will be in touch with early access to new bio. products. — bio., getbiodental.co.uk',email:email,source:which,page:location.pathname})
       });
     }catch(_){}
     try{ if(window.fbq) fbq('track','Lead'); }catch(_){}
@@ -820,22 +820,22 @@ h1,h2{letter-spacing:-.018em}
 
   var STRIPE_LINKS = {
     // ---- SINGLE SET (one-time) ----
-    'upper_single_nokit': 'https://buy.stripe.com/7sYcN4fvI7zidwZdfSfrW02',   // £100
-    'upper_single_kit':   'https://buy.stripe.com/8x24gyfvIdXGboRdfSfrW04',   // £130
-    'lower_single_nokit': 'https://buy.stripe.com/7sYcN4fvI7zidwZdfSfrW02',   // £100 (shared upper/lower £100 link, confirmed)
-    'lower_single_kit':   'https://buy.stripe.com/fZu3cuabo7zi1Oh5NqfrW05',   // £130
-    'both_single_nokit':  'https://buy.stripe.com/00wfZgdnA1aUgJb5NqfrW06',   // £175  (both arches)
-    'both_single_kit':    'https://buy.stripe.com/5kQ6oG83g2eY0Kdb7KfrW07',   // £205  (both arches + kit)
+    'upper_single_nokit': 'https://buy.stripe.com/7sYcN4fvI7zidwZdfSfrW02',   // £110
+    'upper_single_kit':   'https://buy.stripe.com/8x24gyfvIdXGboRdfSfrW04',   // £143
+    'lower_single_nokit': 'https://buy.stripe.com/7sYcN4fvI7zidwZdfSfrW02',   // £110 (shared upper/lower £110 link, confirmed)
+    'lower_single_kit':   'https://buy.stripe.com/fZu3cuabo7zi1Oh5NqfrW05',   // £143
+    'both_single_nokit':  'https://buy.stripe.com/00wfZgdnA1aUgJb5NqfrW06',   // £195  (both arches)
+    'both_single_kit':    'https://buy.stripe.com/5kQ6oG83g2eY0Kdb7KfrW07',   // £225  (both arches + kit)
 
-    // ---- ANNUAL SUBSCRIPTION (£140/yr) ----
+    // ---- ANNUAL SUBSCRIPTION (£154/yr) ----
     // Bundle subs use VAR 1 per your instruction.
-    'both_sub_nokit':     'https://buy.stripe.com/14A9ASdnAg5OdwZa3GfrW00',   // £140/yr
-    'both_sub_kit':       'https://buy.stripe.com/cNi28qerE6veeB31xafrW01',   // £170/yr (+£30)
+    'both_sub_nokit':     'https://buy.stripe.com/14A9ASdnAg5OdwZa3GfrW00',   // £154/yr
+    'both_sub_kit':       'https://buy.stripe.com/cNi28qerE6veeB31xafrW01',   // £187/yr (+£33)
     // Upper/lower subscriptions: links pending — fall back until pasted.
-    'upper_sub_nokit':    '',   // £140/yr        [TODO: paste upper-only subscription Payment Link]
-    'upper_sub_kit':      '',   // £170/yr (+£30) [TODO: paste upper-only subscription + kit Payment Link]
-    'lower_sub_nokit':    '',   // £140/yr        [TODO: paste lower-only subscription Payment Link]
-    'lower_sub_kit':      ''    // £170/yr (+£30) [TODO: paste lower-only subscription + kit Payment Link]
+    'upper_sub_nokit':    '',   // £154/yr        [TODO: paste upper-only subscription Payment Link]
+    'upper_sub_kit':      '',   // £187/yr (+£33) [TODO: paste upper-only subscription + kit Payment Link]
+    'lower_sub_nokit':    '',   // £154/yr        [TODO: paste lower-only subscription Payment Link]
+    'lower_sub_kit':      ''    // £187/yr (+£33) [TODO: paste lower-only subscription + kit Payment Link]
   };
 
   // Pricing (in £). Single = one-off; sub = annual recurring.
@@ -859,7 +859,7 @@ h1,h2{letter-spacing:-.018em}
 
   var archLabels = { upper:'Upper only', lower:'Lower only', both:'Both arches' };
   var planLabels = { single:'Single set', sub:'Annual subscription' };
-  var kitLabels  = { kit:'Yes (+£30)', nokit:'No — uploading a scan' };
+  var kitLabels  = { kit:'Yes (+£33)', nokit:'No — uploading a scan' };
 
   function selectOpt(group, val){
     state[group] = val;
